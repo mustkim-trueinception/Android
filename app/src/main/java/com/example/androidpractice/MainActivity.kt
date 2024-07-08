@@ -51,7 +51,7 @@ fun FirstScreen() {
 
 
          //Login()
-       // Welcome()
-        Signup()
+       Welcome()
+        //Signup()
     }}
 
