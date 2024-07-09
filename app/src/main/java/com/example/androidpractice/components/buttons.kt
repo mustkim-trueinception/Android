@@ -4,6 +4,9 @@ import android.content.res.Resources.Theme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonColors
@@ -16,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
+import com.example.androidpractice.Screens.Variables
 
 
 // class created for color selection
@@ -48,7 +52,15 @@ fun ReusableButton(
 ) {
     Button(
         enabled = enabled,
-        modifier = modifier,
+        modifier = modifier
+            .width(382.dp)
+            .height(48.dp)
+            .padding(
+                start = 32.dp,
+                top = Variables.xSm,
+                end = 32.dp,
+                bottom = Variables.xSm
+            ),
         onClick = onClick,
         contentPadding = contentPaddingValues,
         shape = shape,
@@ -66,14 +78,8 @@ fun ReusableButton(
 
             Text(
                 text = text,
-                style = TextStyle(
-                    fontStyle = textStyle.fontStyle,
-                    fontWeight = textStyle.fontWeight,
-                    fontSize = textStyle.fontSize,
-                    lineHeight = textStyle.lineHeight,
-                    letterSpacing = textStyle.letterSpacing,
-                    color = Color.DarkGray
-                ),
+                style = textStyle
+                ,
             )
             if (endIcon != null) {
                 endIcon()

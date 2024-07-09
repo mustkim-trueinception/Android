@@ -137,8 +137,8 @@ fun Login() {
                 textAlign = TextAlign.Center),
             onClick = {},
             modifier = Modifier
-                .width(382.dp)
-                .height(48.dp)
+//                .width(382.dp)
+//                .height(48.dp)
                 .background(
                     color = Variables.primary500,
                     shape = RoundedCornerShape(size = 999.dp)
