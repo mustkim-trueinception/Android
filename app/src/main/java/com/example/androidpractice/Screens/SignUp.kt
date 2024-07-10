@@ -27,15 +27,17 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.androidpractice.Navigations.Route
 import com.example.androidpractice.R
 import com.example.androidpractice.components.ReusableButton
+import com.example.androidpractice.components.Variables
 
-@Preview(showBackground = true)
+
 @Composable
-fun Signup() {
+fun Signup(navController: NavController) {
 
     Column(
         Modifier
@@ -112,7 +114,6 @@ fun Signup() {
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
                 horizontalAlignment = Alignment.Start,
             ) {
-                // Child views.
 
                 Row {
                     Text(
@@ -179,7 +180,7 @@ fun Signup() {
                 )
             }
         }
-
+// Bottom Button functionality
         Column(
             Modifier
                 .width(398.dp)
@@ -188,9 +189,7 @@ fun Signup() {
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
 
-
             ReusableButton(
-
                 endIcon = {
                     Icon(
                         modifier = Modifier
@@ -199,11 +198,10 @@ fun Signup() {
                             .height(20.dp),
                         painter = painterResource(id = R.drawable.right),
                         tint = Color.White,
-                        contentDescription = ""
-                    )
+                        contentDescription = "")
                 },
                 colors = ButtonDefaults.buttonColors(Variables.primary500),
-                text = "Continue With Email",
+                text = "SIGN UP",
                 textStyle = TextStyle(
                     fontSize = 16.sp,
                     lineHeight = 24.sp,
@@ -213,11 +211,6 @@ fun Signup() {
                 ),
                 onClick = {},
                 modifier = Modifier
-
-                    .background(
-                        color = Variables.primary500,
-                        shape = RoundedCornerShape(size = 999.dp)
-                    )
             )
 
             Row(
@@ -234,7 +227,7 @@ fun Signup() {
                     .width(66.dp)
                     .height(24.dp)
                     .padding(start = 8.dp, end = 8.dp)
-                    .clickable { },
+                    .clickable {navController.navigate(Route.Login)},
                     color = Color.Blue,
                     text = "Log in",
                     textAlign = TextAlign.Center
