@@ -1,6 +1,7 @@
 package com.example.androidpractice.Screens
 
 
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -41,10 +42,7 @@ import com.example.androidpractice.R
 import com.example.androidpractice.components.ReusableButton
 import com.example.androidpractice.components.Variables
 
-@Composable
-fun Star() {
 
-}
 
 
 @Composable
@@ -253,9 +251,9 @@ fun Login(navController: NavController) {
 
                 Row(
                     Modifier
-                        .width(281.dp)
+                        .width(291.dp)
                         .height(24.dp),
-                    horizontalArrangement = Arrangement.spacedBy(0.dp, Alignment.Start),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.Start),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
 
@@ -263,9 +261,9 @@ fun Login(navController: NavController) {
 
                     Text(
                         modifier = Modifier
-                            .width(66.dp)
+                            .width(86.dp)
                             .height(24.dp)
-                            .padding(start = 8.dp, end = 8.dp)
+
                             .clickable { navController.navigate(Route.Signup) },
                         color = Color.Blue,
                         text = "Sign up",
