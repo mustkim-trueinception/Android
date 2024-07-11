@@ -42,15 +42,16 @@ fun Signup(navController: NavController) {
     Column(
         Modifier
             .width(398.dp)
-            .height(714.dp), verticalArrangement = Arrangement.SpaceBetween,
+            .height(714.dp)
+            .padding(10.dp), verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally
     )
     {
         Column(
             Modifier
-                .width(398.dp)
-                .height(332.dp),
-            verticalArrangement = Arrangement.spacedBy(32.dp, Alignment.Top),
+                .width(398.dp),
+            //  .height(332.dp)
+            verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.Top),
             horizontalAlignment = Alignment.Start,
         ) {
             Text(
@@ -68,8 +69,8 @@ fun Signup(navController: NavController) {
             )
             Column(
                 Modifier
-                    .width(398.dp)
-                    .height(68.dp),
+                    .width(398.dp),
+                //    .height(68.dp)
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
                 horizontalAlignment = Alignment.Start,
             ) {
@@ -87,7 +88,7 @@ fun Signup(navController: NavController) {
                 }
                 OutlinedTextField(modifier = Modifier
                     .width(398.dp)
-                    .height(40.dp)
+                    //  .height(40.dp)
                     .background(
                         color = Variables.CommonWhite,
                         shape = RoundedCornerShape(size = 6.dp)
@@ -109,8 +110,8 @@ fun Signup(navController: NavController) {
 
             Column(
                 Modifier
-                    .width(398.dp)
-                    .height(68.dp),
+                    .width(398.dp),
+                // .height(68.dp)
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
                 horizontalAlignment = Alignment.Start,
             ) {
@@ -127,7 +128,7 @@ fun Signup(navController: NavController) {
                 }
                 OutlinedTextField(modifier = Modifier
                     .width(398.dp)
-                    .height(40.dp)
+                    //   .height(40.dp)
                     .background(
                         color = Variables.CommonWhite,
                         shape = RoundedCornerShape(size = 6.dp)
@@ -145,8 +146,8 @@ fun Signup(navController: NavController) {
             }
             Column(
                 Modifier
-                    .width(398.dp)
-                    .height(68.dp),
+                    .width(398.dp),
+                //  .height(68.dp)
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
                 horizontalAlignment = Alignment.Start,
             ) {
@@ -165,13 +166,17 @@ fun Signup(navController: NavController) {
                 }
                 OutlinedTextField(modifier = Modifier
                     .width(398.dp)
-                    .height(40.dp), value = "",
+                    // .height(40.dp)
+                    , value = "",
                     onValueChange = {},
                     placeholder = {
                         Text(text = "****")
                     },
                     leadingIcon = {
                         Image(
+                            modifier = Modifier
+                                .width(24.dp)
+                                .height(24.dp),
                             painter = painterResource(id = R.drawable.key),
                             contentDescription = "Icon"
                         )
@@ -184,7 +189,11 @@ fun Signup(navController: NavController) {
         Column(
             Modifier
                 .width(398.dp)
-                .height(104.dp),
+                .height(104.dp)
+                .padding(
+                    start = Variables.xSm,
+                    end = Variables.xSm
+                ),
             verticalArrangement = Arrangement.spacedBy(32.dp, Alignment.Top),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
@@ -198,7 +207,8 @@ fun Signup(navController: NavController) {
                             .height(20.dp),
                         painter = painterResource(id = R.drawable.right),
                         tint = Color.White,
-                        contentDescription = "")
+                        contentDescription = ""
+                    )
                 },
                 colors = ButtonDefaults.buttonColors(Variables.primary500),
                 text = "SIGN UP",
@@ -223,11 +233,14 @@ fun Signup(navController: NavController) {
 
                 Text(text = "New here? Create an account.")
 
-                Text(modifier = Modifier
-                    .width(66.dp)
-                    .height(24.dp)
+                Text(
+                    modifier = Modifier
+                        .width(66.dp)
+                        .height(24.dp)
 
-                    .clickable {navController.navigate(Route.Login)},
+                        .clickable {
+                            navController.navigate(Route.Login)
+                        },
                     color = Color.Blue,
                     text = "Log in",
                     textAlign = TextAlign.Center

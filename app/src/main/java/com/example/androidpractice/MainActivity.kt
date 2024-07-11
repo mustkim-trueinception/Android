@@ -6,6 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -38,9 +40,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun FirstScreen() {
     Box(
-        modifier = Modifier.padding(start = 5.dp, end = 5.dp)
-            .width(Variables.MobileView)
-            .height(838.46997.dp)
+        modifier = Modifier
+            .fillMaxSize()
             .background(color = Variables.bgColor),
      contentAlignment = Alignment.Center
     ) {
