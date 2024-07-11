@@ -39,6 +39,8 @@ import com.example.androidpractice.components.Variables
 @Composable
 fun Signup(navController: NavController) {
 
+    // Main Content page
+
     Column(
         Modifier
             .width(398.dp)
@@ -50,7 +52,6 @@ fun Signup(navController: NavController) {
         Column(
             Modifier
                 .width(398.dp),
-            //  .height(332.dp)
             verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.Top),
             horizontalAlignment = Alignment.Start,
         ) {
@@ -70,7 +71,6 @@ fun Signup(navController: NavController) {
             Column(
                 Modifier
                     .width(398.dp),
-                //    .height(68.dp)
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
                 horizontalAlignment = Alignment.Start,
             ) {
@@ -88,7 +88,6 @@ fun Signup(navController: NavController) {
                 }
                 OutlinedTextField(modifier = Modifier
                     .width(398.dp)
-                    //  .height(40.dp)
                     .background(
                         color = Variables.CommonWhite,
                         shape = RoundedCornerShape(size = 6.dp)
@@ -111,7 +110,6 @@ fun Signup(navController: NavController) {
             Column(
                 Modifier
                     .width(398.dp),
-                // .height(68.dp)
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
                 horizontalAlignment = Alignment.Start,
             ) {
@@ -128,7 +126,6 @@ fun Signup(navController: NavController) {
                 }
                 OutlinedTextField(modifier = Modifier
                     .width(398.dp)
-                    //   .height(40.dp)
                     .background(
                         color = Variables.CommonWhite,
                         shape = RoundedCornerShape(size = 6.dp)
@@ -147,7 +144,6 @@ fun Signup(navController: NavController) {
             Column(
                 Modifier
                     .width(398.dp),
-                //  .height(68.dp)
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
                 horizontalAlignment = Alignment.Start,
             ) {
@@ -166,7 +162,7 @@ fun Signup(navController: NavController) {
                 }
                 OutlinedTextField(modifier = Modifier
                     .width(398.dp)
-                    // .height(40.dp)
+
                     , value = "",
                     onValueChange = {},
                     placeholder = {

@@ -44,7 +44,8 @@ fun Welcome(navController: NavController) {
             .height(714.dp).padding(10.dp), verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally
     )
-    {   // Heading Word Hello
+    {
+        // Heading Word Hello
         Box(
             modifier = Modifier
                 .width(398.dp)
@@ -60,8 +61,7 @@ fun Welcome(navController: NavController) {
                 )
             )
         }
-
-
+// Main Image here
 
             Image( modifier = Modifier
                 .height(284.dp)
@@ -72,9 +72,7 @@ fun Welcome(navController: NavController) {
                 contentScale = ContentScale.FillBounds,
                    )
 
-
-
-
+        // Buttons are Used
         Column(
             Modifier
                 .width(398.dp)
@@ -87,7 +85,7 @@ fun Welcome(navController: NavController) {
             verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.CenterVertically),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            // Buttons are Used
+
             ReusableButton(
                 startIcon = {
                     Image(

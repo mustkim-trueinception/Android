@@ -65,7 +65,7 @@ fun Login(navController: NavController) {
                 horizontalAlignment = Alignment.Start,
                 modifier = Modifier
                     .width(398.dp)
-                //  .height(280.dp)
+
             ) {
                 Text(
                     text = "Hey, Hello 👋🏻 ",
@@ -86,7 +86,7 @@ fun Login(navController: NavController) {
                     horizontalAlignment = Alignment.Start,
                     modifier = Modifier
                         .width(398.dp)
-                    //  .height(68.dp)
+
                 ) {
                     Row(
                         horizontalArrangement = Arrangement.spacedBy(4.dp, Alignment.Start),
@@ -137,7 +137,7 @@ fun Login(navController: NavController) {
                     horizontalAlignment = Alignment.Start,
                     modifier = Modifier
                         .width(398.dp)
-                    //  .height(68.dp)
+
                 ) {
                     Row(
                         horizontalArrangement = Arrangement.spacedBy(4.dp, Alignment.Start),
