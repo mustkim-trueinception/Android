@@ -43,6 +43,8 @@ import com.example.androidpractice.components.Variables
 @Composable
 fun Login(navController: NavController) {
 
+    // This is check box verialble
+
     var checked by remember { mutableStateOf(true) }
 
     Column(
