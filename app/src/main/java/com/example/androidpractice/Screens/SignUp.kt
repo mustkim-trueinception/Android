@@ -6,6 +6,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -43,15 +45,15 @@ fun Signup(navController: NavController) {
 
     Column(
         Modifier
-            .width(398.dp)
-            .height(714.dp)
-            .padding(10.dp), verticalArrangement = Arrangement.SpaceBetween,
+            .fillMaxWidth()
+            .fillMaxSize()
+            .padding(15.dp), verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally
     )
     {
         Column(
             Modifier
-                .width(398.dp),
+                .fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.Top),
             horizontalAlignment = Alignment.Start,
         ) {
@@ -59,7 +61,7 @@ fun Signup(navController: NavController) {
 
                 text = "Create Account",
                 Modifier
-                    .width(398.dp)
+                    .fillMaxWidth()
                     .height(32.dp),
                 style = TextStyle(
                     fontSize = 24.sp,
@@ -70,7 +72,7 @@ fun Signup(navController: NavController) {
             )
             Column(
                 Modifier
-                    .width(398.dp),
+                    .fillMaxWidth(),
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
                 horizontalAlignment = Alignment.Start,
             ) {
@@ -87,7 +89,7 @@ fun Signup(navController: NavController) {
                     Text(text = "*", color = Color.Red)
                 }
                 OutlinedTextField(modifier = Modifier
-                    .width(398.dp)
+                    .fillMaxWidth()
                     .background(
                         color = Variables.CommonWhite,
                         shape = RoundedCornerShape(size = 6.dp)
@@ -109,7 +111,7 @@ fun Signup(navController: NavController) {
 
             Column(
                 Modifier
-                    .width(398.dp),
+                    .fillMaxWidth(),
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
                 horizontalAlignment = Alignment.Start,
             ) {
@@ -125,7 +127,7 @@ fun Signup(navController: NavController) {
                     Text(text = "*", color = Color.Red)
                 }
                 OutlinedTextField(modifier = Modifier
-                    .width(398.dp)
+                    .fillMaxWidth()
                     .background(
                         color = Variables.CommonWhite,
                         shape = RoundedCornerShape(size = 6.dp)
@@ -143,7 +145,7 @@ fun Signup(navController: NavController) {
             }
             Column(
                 Modifier
-                    .width(398.dp),
+                    .fillMaxWidth(),
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
                 horizontalAlignment = Alignment.Start,
             ) {
@@ -161,9 +163,7 @@ fun Signup(navController: NavController) {
                     Text(text = "*", color = Color.Red)
                 }
                 OutlinedTextField(modifier = Modifier
-                    .width(398.dp)
-
-                    , value = "",
+                    .fillMaxWidth(), value = "",
                     onValueChange = {},
                     placeholder = {
                         Text(text = "****")
@@ -184,8 +184,7 @@ fun Signup(navController: NavController) {
 // Bottom Button functionality
         Column(
             Modifier
-                .width(398.dp)
-                .height(104.dp)
+                .fillMaxWidth()
                 .padding(
                     start = Variables.xSm,
                     end = Variables.xSm

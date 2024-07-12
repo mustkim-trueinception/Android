@@ -2,26 +2,19 @@ package com.example.androidpractice.Screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Shadow
-import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -40,48 +33,45 @@ fun Welcome(navController: NavController) {
 
     Column(
         Modifier
-            .width(398.dp)
-            .height(714.dp).padding(10.dp), verticalArrangement = Arrangement.SpaceBetween,
+            .fillMaxWidth()
+            .fillMaxSize()
+            .padding(15.dp), verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally
     )
     {
         // Heading Word Hello
-        Box(
+
+        Text(
             modifier = Modifier
                 .width(398.dp)
-                .height(40.dp)
-        ) {
-            Text(
-                text = "Hey, Hello 👋🏻 ",
-                style = TextStyle(
-                    fontSize = 24.sp,
-                    lineHeight = 32.sp,
-                    fontWeight = FontWeight(700),
-                    color = Variables.textInactive,
-                )
+                .height(40.dp),
+            text = "Hey, Hello 👋🏻 ",
+            style = TextStyle(
+                fontSize = 24.sp,
+                lineHeight = 32.sp,
+                fontWeight = FontWeight(700),
+                color = Variables.textInactive,
             )
-        }
+        )
+
 // Main Image here
 
-            Image( modifier = Modifier
-                .height(284.dp)
-                .width(300.dp),
-
-                    painter = painterResource(id = R.drawable.all),
-                contentDescription = "",
-                contentScale = ContentScale.FillBounds,
-                   )
+        Image(
+            modifier = Modifier,
+            painter = painterResource(id = R.drawable.all),
+            contentDescription = "",
+        )
 
         // Buttons are Used
         Column(
             Modifier
-                .width(398.dp)
-                .height(256.dp)
+                .fillMaxWidth()
                 .padding(
                     start = Variables.xSm,
                     end = Variables.xSm,
                     top = Variables.xSm,
-                    bottom = Variables.xSm),
+                    bottom = Variables.xSm
+                ),
             verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.CenterVertically),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
@@ -104,7 +94,7 @@ fun Welcome(navController: NavController) {
                     color = Variables.Grey900,
                 ),
                 modifier = Modifier
-                    )
+            )
 
             ReusableButton(
                 startIcon = {
@@ -163,10 +153,10 @@ fun Welcome(navController: NavController) {
                     color = Variables.textIconographyDarkActive,
                     textAlign = TextAlign.Center
                 ),
-                onClick = {navController.navigate(Route.Signup)},
+                onClick = { navController.navigate(Route.Signup) },
                 modifier = Modifier
 
-                    )
+            )
         }
     }
 }
