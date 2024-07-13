@@ -18,6 +18,7 @@ import androidx.compose.material.icons.filled.Email
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -41,13 +42,18 @@ import com.example.androidpractice.components.Variables
 @Composable
 fun Signup(navController: NavController) {
 
+    Scaffold(modifier = Modifier.fillMaxSize(),
+    ) { innerPadding ->
+
+
+
     // Main Content page
 
     Column(
         Modifier
             .fillMaxWidth()
             .fillMaxSize()
-            .padding(15.dp), verticalArrangement = Arrangement.SpaceBetween,
+            .padding(innerPadding), verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally
     )
     {
@@ -245,4 +251,4 @@ fun Signup(navController: NavController) {
 
         }
     }
-}
+}}

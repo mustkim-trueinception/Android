@@ -1,6 +1,7 @@
 package com.example.androidpractice.Screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -23,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.androidpractice.Navigations.Route
+import com.example.androidpractice.Navigations.navigation
 import com.example.androidpractice.R
 import com.example.androidpractice.components.ReusableButton
 import com.example.androidpractice.components.Variables
@@ -31,11 +34,16 @@ import com.example.androidpractice.components.Variables
 @Composable
 fun Welcome(navController: NavController) {
 
+    Scaffold(modifier = Modifier.fillMaxSize(),
+    ) { innerPadding ->
+
+
+
     Column(
         Modifier
             .fillMaxWidth()
             .fillMaxSize()
-            .padding(15.dp), verticalArrangement = Arrangement.SpaceBetween,
+            .padding(innerPadding), verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally
     )
     {
@@ -159,4 +167,4 @@ fun Welcome(navController: NavController) {
             )
         }
     }
-}
+}}

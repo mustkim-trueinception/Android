@@ -18,6 +18,7 @@ import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -44,6 +45,11 @@ import com.example.androidpractice.components.Variables
 @Composable
 fun Login(navController: NavController) {
 
+    Scaffold(modifier = Modifier.fillMaxSize(),
+    ) { innerPadding ->
+
+
+
     // This is check box verialble
 
     var checked by remember { mutableStateOf(true) }
@@ -54,7 +60,7 @@ fun Login(navController: NavController) {
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxSize()
-            .padding(15.dp)
+            .padding(innerPadding)
     ) {
         Column(
             verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.Top),
@@ -269,4 +275,4 @@ fun Login(navController: NavController) {
         }
     }
 
-}
+}}
