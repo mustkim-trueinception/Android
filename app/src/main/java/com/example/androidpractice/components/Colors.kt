@@ -6,6 +6,15 @@ import androidx.compose.ui.unit.dp
 
 object Variables {
 
+
+        val ShadesOfGray400: Color = Color(0xFFA3A3A3)
+        val xxSm: Dp = 4.dp
+        val ShadesOfGray300: Color = Color(0xFFD4D4D4)
+        val textActive: Color = Color(0xDE000000)
+        val md: Dp = 16.dp
+        val Grey50: Color = Color(0xFFFAFAFA)
+        val xxxBig: Dp = 32.dp
+
     val primary500: Color = Color(0xFF6366F1)
     val textIconographyDarkActive: Color = Color(0xDEFFFFFF)
     val textInactive: Color = Color(0x99000000)

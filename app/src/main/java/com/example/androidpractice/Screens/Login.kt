@@ -2,6 +2,7 @@ package com.example.androidpractice.Screens
 
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -19,6 +20,7 @@ import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -47,10 +49,12 @@ fun Login(navController: NavController) {
 
     Scaffold(modifier = Modifier.fillMaxSize(),
     ) { innerPadding ->
+        Surface (modifier = Modifier.padding(innerPadding)
+            .background(color = Variables.CommonWhite)) {
 
 
 
-    // This is check box verialble
+        // This is check box verialble
 
     var checked by remember { mutableStateOf(true) }
 
@@ -60,7 +64,7 @@ fun Login(navController: NavController) {
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxSize()
-            .padding(innerPadding)
+            .padding(15.dp)
     ) {
         Column(
             verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.Top),
@@ -245,7 +249,7 @@ fun Login(navController: NavController) {
                     color = Color.White,
                     textAlign = TextAlign.Center
                 ),
-                onClick = {},
+                onClick = {navController.navigate(Route.Home)},
                 modifier = Modifier
 
             )
@@ -275,4 +279,5 @@ fun Login(navController: NavController) {
         }
     }
 
-}}
+}
+    }}

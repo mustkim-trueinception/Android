@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.androidpractice.Screens.Login
 import com.example.androidpractice.Screens.Signup
 import com.example.androidpractice.Screens.Welcome
+import com.example.androidpractice.Screens.mainpage
 import kotlinx.serialization.Serializable
 
 // Routes Are Defiene Here
@@ -21,6 +22,9 @@ sealed class Route{
     @Serializable
     object Login: Route()
 
+    @Serializable
+    object Home: Route()
+
 }
 
 // Nav Controller Defined Here
@@ -32,6 +36,7 @@ fun navigation(){
         composable<Route.Welcome> { Welcome(navController) }
         composable<Route.Login> { Login(navController) }
         composable<Route.Signup> { Signup(navController) }
+        composable<Route.Home> { mainpage(navController)  }
 
     }
 }
