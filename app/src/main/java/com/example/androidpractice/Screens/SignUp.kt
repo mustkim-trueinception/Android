@@ -6,6 +6,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -16,6 +18,8 @@ import androidx.compose.material.icons.filled.Email
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -39,19 +43,26 @@ import com.example.androidpractice.components.Variables
 @Composable
 fun Signup(navController: NavController) {
 
+    Scaffold(modifier = Modifier.fillMaxSize(),
+    ) { innerPadding ->
+
+        Surface (modifier = Modifier.padding(innerPadding)
+            .background(color = Variables.CommonWhite)) {
+
+
     // Main Content page
 
     Column(
         Modifier
-            .width(398.dp)
-            .height(714.dp)
-            .padding(10.dp), verticalArrangement = Arrangement.SpaceBetween,
+            .fillMaxWidth()
+            .fillMaxSize()
+            .padding(15.dp), verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally
     )
     {
         Column(
             Modifier
-                .width(398.dp),
+                .fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.Top),
             horizontalAlignment = Alignment.Start,
         ) {
@@ -59,7 +70,7 @@ fun Signup(navController: NavController) {
 
                 text = "Create Account",
                 Modifier
-                    .width(398.dp)
+                    .fillMaxWidth()
                     .height(32.dp),
                 style = TextStyle(
                     fontSize = 24.sp,
@@ -70,7 +81,7 @@ fun Signup(navController: NavController) {
             )
             Column(
                 Modifier
-                    .width(398.dp),
+                    .fillMaxWidth(),
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
                 horizontalAlignment = Alignment.Start,
             ) {
@@ -87,7 +98,7 @@ fun Signup(navController: NavController) {
                     Text(text = "*", color = Color.Red)
                 }
                 OutlinedTextField(modifier = Modifier
-                    .width(398.dp)
+                    .fillMaxWidth()
                     .background(
                         color = Variables.CommonWhite,
                         shape = RoundedCornerShape(size = 6.dp)
@@ -109,7 +120,7 @@ fun Signup(navController: NavController) {
 
             Column(
                 Modifier
-                    .width(398.dp),
+                    .fillMaxWidth(),
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
                 horizontalAlignment = Alignment.Start,
             ) {
@@ -125,7 +136,7 @@ fun Signup(navController: NavController) {
                     Text(text = "*", color = Color.Red)
                 }
                 OutlinedTextField(modifier = Modifier
-                    .width(398.dp)
+                    .fillMaxWidth()
                     .background(
                         color = Variables.CommonWhite,
                         shape = RoundedCornerShape(size = 6.dp)
@@ -143,7 +154,7 @@ fun Signup(navController: NavController) {
             }
             Column(
                 Modifier
-                    .width(398.dp),
+                    .fillMaxWidth(),
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
                 horizontalAlignment = Alignment.Start,
             ) {
@@ -161,9 +172,7 @@ fun Signup(navController: NavController) {
                     Text(text = "*", color = Color.Red)
                 }
                 OutlinedTextField(modifier = Modifier
-                    .width(398.dp)
-
-                    , value = "",
+                    .fillMaxWidth(), value = "",
                     onValueChange = {},
                     placeholder = {
                         Text(text = "****")
@@ -184,8 +193,7 @@ fun Signup(navController: NavController) {
 // Bottom Button functionality
         Column(
             Modifier
-                .width(398.dp)
-                .height(104.dp)
+                .fillMaxWidth()
                 .padding(
                     start = Variables.xSm,
                     end = Variables.xSm
@@ -215,7 +223,7 @@ fun Signup(navController: NavController) {
                     color = Color.White,
                     textAlign = TextAlign.Center
                 ),
-                onClick = {},
+                onClick = {navController.navigate(Route.Home)},
                 modifier = Modifier
             )
 
@@ -246,4 +254,5 @@ fun Signup(navController: NavController) {
 
         }
     }
-}
+}}
+    }
