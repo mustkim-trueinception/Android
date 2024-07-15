@@ -13,8 +13,7 @@ object Variables {
         val textActive: Color = Color(0xDE000000)
         val md: Dp = 16.dp
         val Grey50: Color = Color(0xFFFAFAFA)
-        val xxxBig: Dp = 32.dp
-
+        val xxxBig: Dp = 30.dp
     val primary500: Color = Color(0xFF6366F1)
     val textIconographyDarkActive: Color = Color(0xDEFFFFFF)
     val textInactive: Color = Color(0x99000000)
@@ -29,5 +28,8 @@ object Variables {
     val sm: Dp = 12.dp
     val xSm: Dp = 8.dp
     val MobileView: Dp = 430.dp
-}
+        val Green500: Color = Color(0xFF4CAF50)
+        val textDisabled: Color = Color(0x61000000)
+    }
+
 

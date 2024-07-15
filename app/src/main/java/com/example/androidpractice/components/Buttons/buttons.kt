@@ -1,4 +1,4 @@
-package com.example.androidpractice.components
+package com.example.androidpractice.components.Buttons
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
+import com.example.androidpractice.components.Variables
 
 
 // Components
@@ -31,7 +32,7 @@ fun ReusableButton(
     endIcon: @Composable (() -> Unit)? = null,
     shape: RoundedCornerShape = RoundedCornerShape(size = 999.dp),
     contentPaddingValues: PaddingValues = PaddingValues(
-        start = 16.dp, end = 16.dp, top = 0.dp, bottom = 0.dp),
+        start = 18.dp, end = 14.dp, top = 0.dp, bottom = 0.dp),
     horizontalArrangement: Arrangement.Horizontal = Arrangement.spacedBy(
         8.dp, Alignment.CenterHorizontally),
 )
