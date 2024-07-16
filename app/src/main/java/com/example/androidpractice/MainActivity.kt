@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            AndroidPracticeTheme {
+
 
                 Column(
                     modifier = Modifier
@@ -48,5 +48,5 @@ class MainActivity : ComponentActivity() {
 
         }
     }
-}
+
 

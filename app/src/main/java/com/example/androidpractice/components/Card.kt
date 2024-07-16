@@ -22,20 +22,18 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun CostCard(
-    onClick: () -> Unit,
     modifier: Modifier = Modifier,
     Image:@Composable (() -> Unit)? = null,
     Text:String = "",
-    Shape:RoundedCornerShape = RoundedCornerShape(Variables.xSm)
 ) {
-    Surface(onClick = onClick, shape = Shape) {
+//    Surface(onClick = onClick, shape = Shape) {
 
 
     Column(
         modifier = modifier
             .width(113.6.dp)
             .height(145.60001.dp)
-//            .background(color = Variables.ShadesOfGray300, shape = RoundedCornerShape(size = Variables.xSm))
+           .background(color = Variables.bgColor, shape = RoundedCornerShape(size = Variables.xSm))
             .padding(
                 start = Variables.sm,
                 top = Variables.xSm,
@@ -64,4 +62,5 @@ fun CostCard(
 
     }
 
-}}
+}
+//}

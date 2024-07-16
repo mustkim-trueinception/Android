@@ -3,6 +3,7 @@ package com.example.androidpractice.Screens
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -13,6 +14,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
@@ -28,6 +31,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -36,15 +40,19 @@ import com.example.androidpractice.components.Buttons.CostIconButton
 import com.example.androidpractice.components.CostCard
 import com.example.androidpractice.components.Variables
 
-
 @Composable
 fun mainpage(navController: NavController) {
 
     Scaffold(
 
 
+
         bottomBar = {
-            NavigationBar {
+
+            NavigationBar (
+                containerColor = Variables.bgColor,
+                contentColor = Variables.bgColor,
+            ){
 
                 // Costom navigation bar with icon and text
 
@@ -66,7 +74,7 @@ fun mainpage(navController: NavController) {
                 CostIconButton(
                     modifier = Modifier.weight(1f),
                     Text = "Offers",
-                    onClick = { /*TODO*/ },
+                    onClick = { },
                     Icon = {
                         Image(
                             modifier = Modifier
@@ -121,12 +129,14 @@ fun mainpage(navController: NavController) {
                     })
 
 
+
+
             }
         }) { innerPadding ->
         Surface(
             modifier = Modifier
                 .padding(innerPadding)
-                .background(color = Variables.CommonWhite)
+                .background(color = Variables.primary500)
         ) {
 
             LazyColumn(
@@ -234,13 +244,13 @@ fun mainpage(navController: NavController) {
                 // Top Categories lazy row
                 item {
 
-                    Column(
+                    Column(modifier = Modifier,
                         verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.Top),
                         horizontalAlignment = Alignment.Start,
                     ) {
                         Row(
                             Modifier
-                                .width(398.dp)
+                                .fillMaxWidth()
                                 //  .height(Variables.xxxBig)
                                 .padding(
                                     start = Variables.xSm,
@@ -254,22 +264,35 @@ fun mainpage(navController: NavController) {
                             ),
                             verticalAlignment = Alignment.CenterVertically,
                         ) {
+                            Column ( verticalArrangement = Arrangement.spacedBy(4.dp, Alignment.Top),
+                                horizontalAlignment = Alignment.Start,){
+                                Text(
+                                    text = "Top Categories",
+                                    style = TextStyle(
+                                        fontSize = 17.sp,
+                                        lineHeight = 24.sp,
+                                        fontWeight = FontWeight(600),
+                                        color = Variables.textActive,
+                                    )
+                                    )
 
-                            Text(
-                                text = "Top Categories",
-                                style = TextStyle(
-                                    fontSize = 17.sp,
-                                    lineHeight = 24.sp,
-                                    fontWeight = FontWeight(600),
-                                    color = Variables.textActive,
-                                )
-                            )
+                                Row (Modifier
+                                    .background(color = Color(0xFF9E9E9E))
+                                    .fillMaxWidth()
+                                    .height(1.dp)
+                                    .padding(start = Variables.xSm, top = Variables.xxSm, end = Variables.xSm, bottom = Variables.xxSm)){
+
+                                }
+                            }
+
+
+
                         }
                         LazyRow(modifier = Modifier.height(146.dp)) {
                             item {
 
-                                CostCard(
-                                    onClick = {},
+                                CostCard(modifier = Modifier.clickable {  }
+                                   ,
                                     Image = {
                                         Image(
                                             painter = painterResource(id = R.drawable.elip),
@@ -279,7 +302,7 @@ fun mainpage(navController: NavController) {
                                 )
 
                                 CostCard(
-                                    onClick = {},
+                                    modifier = Modifier.clickable {  },
                                     Image = {
                                         Image(
                                             painter = painterResource(id = R.drawable.elip2),
@@ -289,7 +312,7 @@ fun mainpage(navController: NavController) {
                                 )
 
                                 CostCard(
-                                    onClick = {},
+                                    modifier = Modifier.clickable {  },
                                     Image = {
                                         Image(
                                             painter = painterResource(id = R.drawable.elip3),
@@ -299,7 +322,7 @@ fun mainpage(navController: NavController) {
                                 )
 
                                 CostCard(
-                                    onClick = {},
+                                    modifier = Modifier.clickable {  },
                                     Image = {
                                         Image(
                                             painter = painterResource(id = R.drawable.elip),
@@ -309,7 +332,7 @@ fun mainpage(navController: NavController) {
                                 )
 
                                 CostCard(
-                                    onClick = {},
+                                    modifier = Modifier.clickable {  },
                                     Image = {
                                         Image(
                                             painter = painterResource(id = R.drawable.elip2),
@@ -319,7 +342,7 @@ fun mainpage(navController: NavController) {
                                 )
 
                                 CostCard(
-                                    onClick = {},
+                                    modifier = Modifier.clickable {  },
                                     Image = {
                                         Image(
                                             painter = painterResource(id = R.drawable.elip3),
@@ -338,17 +361,27 @@ fun mainpage(navController: NavController) {
 
                     Column(
                         verticalArrangement = Arrangement.spacedBy(20.dp, Alignment.Top),
-                        horizontalAlignment = Alignment.Start,
+                        horizontalAlignment = Alignment.Start
                     ) {
-                        Text(
-                            text = "Top Products",
-                            style = TextStyle(
-                                fontSize = 17.sp,
-                                lineHeight = 24.sp,
-                                fontWeight = FontWeight(600),
-                                color = Variables.textActive,
+                        Column (modifier = Modifier.padding(start = 8.dp),verticalArrangement = Arrangement.spacedBy(4.dp, Alignment.Top),
+                            horizontalAlignment = Alignment.Start){
+                            Text(
+                                text = "Top Products",
+                                style = TextStyle(
+                                    fontSize = 17.sp,
+                                    lineHeight = 24.sp,
+                                    fontWeight = FontWeight(600),
+                                    color = Variables.textActive,
+                                )
                             )
-                        )
+                            Row (Modifier
+                                .background(color = Color(0xFF9E9E9E))
+                                .fillMaxWidth()
+                                .height(1.dp)
+                                .padding(start = Variables.xSm, top = Variables.xxSm, end = Variables.xSm, bottom = Variables.xxSm)){
+
+                            }
+                        }
                         LazyRow(
                             Modifier
 
@@ -358,7 +391,7 @@ fun mainpage(navController: NavController) {
                             item {
                                 Column(
                                     Modifier
-                                        .width(224.dp)
+                                        .width(224.dp).clickable {  }
 
                                         .padding(start = 12.dp, end = 12.dp, bottom = 8.dp),
                                     verticalArrangement = Arrangement.spacedBy(

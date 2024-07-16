@@ -50,7 +50,7 @@ fun Login(navController: NavController) {
     Scaffold(modifier = Modifier.fillMaxSize(),
     ) { innerPadding ->
         Surface (modifier = Modifier.padding(innerPadding)
-            .background(color = Variables.CommonWhite)) {
+            .background(color = Variables.bgColor)) {
 
 
 
