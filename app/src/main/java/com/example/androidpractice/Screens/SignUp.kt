@@ -36,7 +36,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.androidpractice.Navigations.Route
 import com.example.androidpractice.R
-import com.example.androidpractice.components.ReusableButton
+import com.example.androidpractice.components.Buttons.ReusableButton
 import com.example.androidpractice.components.Variables
 
 
@@ -47,7 +47,7 @@ fun Signup(navController: NavController) {
     ) { innerPadding ->
 
         Surface (modifier = Modifier.padding(innerPadding)
-            .background(color = Variables.CommonWhite)) {
+            .background(color = Variables.bgColor)) {
 
 
     // Main Content page
@@ -171,8 +171,11 @@ fun Signup(navController: NavController) {
                     )
                     Text(text = "*", color = Color.Red)
                 }
-                OutlinedTextField(modifier = Modifier
-                    .fillMaxWidth(), value = "",
+                OutlinedTextField(
+                    modifier = Modifier.background( color = Variables.CommonWhite,
+                        shape = RoundedCornerShape(size = 6.dp))
+                    .fillMaxWidth(),
+                    value = "",
                     onValueChange = {},
                     placeholder = {
                         Text(text = "****")
@@ -241,7 +244,6 @@ fun Signup(navController: NavController) {
                     modifier = Modifier
                         .width(66.dp)
                         .height(24.dp)
-
                         .clickable {
                             navController.navigate(Route.Login)
                         },

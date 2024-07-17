@@ -26,9 +26,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.androidpractice.Navigations.Route
-import com.example.androidpractice.Navigations.navigation
 import com.example.androidpractice.R
-import com.example.androidpractice.components.ReusableButton
+import com.example.androidpractice.components.Buttons.ReusableButton
 import com.example.androidpractice.components.Variables
 
 

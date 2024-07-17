@@ -40,7 +40,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.androidpractice.Navigations.Route
 import com.example.androidpractice.R
-import com.example.androidpractice.components.ReusableButton
+import com.example.androidpractice.components.Buttons.ReusableButton
 import com.example.androidpractice.components.Variables
 
 
@@ -50,7 +50,7 @@ fun Login(navController: NavController) {
     Scaffold(modifier = Modifier.fillMaxSize(),
     ) { innerPadding ->
         Surface (modifier = Modifier.padding(innerPadding)
-            .background(color = Variables.CommonWhite)) {
+            .background(color = Variables.bgColor)) {
 
 
 
