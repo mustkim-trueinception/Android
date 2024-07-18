@@ -253,7 +253,7 @@ fun Login(navController: NavController) {
                 modifier = Modifier
 
             )
-
+// bottom row
             Row(
                 Modifier
                     .height(24.dp),

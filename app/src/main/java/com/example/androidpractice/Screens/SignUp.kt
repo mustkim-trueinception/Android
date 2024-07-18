@@ -229,7 +229,7 @@ fun Signup(navController: NavController) {
                 onClick = {navController.navigate(Route.Home)},
                 modifier = Modifier
             )
-
+// bottom row
             Row(
                 Modifier
                     .height(24.dp),
