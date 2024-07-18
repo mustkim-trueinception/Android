@@ -232,9 +232,8 @@ fun Signup(navController: NavController) {
 
             Row(
                 Modifier
-                    .width(291.dp)
                     .height(24.dp),
-                horizontalArrangement = Arrangement.spacedBy(0.dp, Alignment.Start),
+                horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.Start),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
 
@@ -242,8 +241,6 @@ fun Signup(navController: NavController) {
 
                 Text(
                     modifier = Modifier
-                        .width(66.dp)
-                        .height(24.dp)
                         .clickable {
                             navController.navigate(Route.Login)
                         },
