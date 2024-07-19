@@ -1,4 +1,4 @@
-package com.example.androidpractice.Screens
+package com.example.androidpractice.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -14,8 +14,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.BottomAppBar
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
@@ -31,17 +29,16 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 import com.example.androidpractice.R
-import com.example.androidpractice.components.Buttons.CostIconButton
 import com.example.androidpractice.components.CostCard
 import com.example.androidpractice.components.Variables
+import com.example.androidpractice.components.bottomnavbar.Navbar
+import com.example.androidpractice.components.carousel.Slider
 
 @Composable
-fun mainpage(navController: NavController) {
+fun Mainpage() {
 
     Scaffold(
 
@@ -53,86 +50,10 @@ fun mainpage(navController: NavController) {
                 containerColor = Variables.bgColor,
                 contentColor = Variables.bgColor,
             ){
-
-                // Costom navigation bar with icon and text
-
-                CostIconButton(
-                    modifier = Modifier.weight(1f),
-                    Text = "Home",
-                    onClick = { /*TODO*/ },
-                    Icon = {
-                        Image(
-                            modifier = Modifier
-                                .padding(1.dp)
-                                .width(30.dp)
-                                .height(30.dp),
-                            painter = painterResource(id = R.drawable.home),
-                            contentDescription = ""
-                        )
-                    })
-
-                CostIconButton(
-                    modifier = Modifier.weight(1f),
-                    Text = "Offers",
-                    onClick = { },
-                    Icon = {
-                        Image(
-                            modifier = Modifier
-                                .padding(1.dp)
-                                .width(30.dp)
-                                .height(30.dp),
-                            painter = painterResource(id = R.drawable.offer),
-                            contentDescription = ""
-                        )
-                    })
-                CostIconButton(
-                    modifier = Modifier.weight(1f),
-                    Text = "Category",
-                    onClick = { /*TODO*/ },
-                    Icon = {
-                        Image(
-                            modifier = Modifier
-                                .padding(1.dp)
-                                .width(30.dp)
-                                .height(30.dp),
-                            painter = painterResource(id = R.drawable.category),
-                            contentDescription = ""
-                        )
-                    })
-                CostIconButton(
-                    modifier = Modifier.weight(1f),
-                    Text = "Contact",
-                    onClick = { /*TODO*/ },
-                    Icon = {
-                        Image(
-                            modifier = Modifier
-                                .padding(1.dp)
-                                .width(30.dp)
-                                .height(30.dp),
-                            painter = painterResource(id = R.drawable.phone),
-                            contentDescription = ""
-                        )
-                    })
-                CostIconButton(
-                    modifier = Modifier.weight(1f),
-                    Text = "My Profile",
-                    onClick = { /*TODO*/ },
-                    Icon = {
-                        Image(
-                            modifier = Modifier
-                                .padding(1.dp)
-                                .width(30.dp)
-                                .height(30.dp),
-                            painter = painterResource(id = R.drawable.profile),
-                            contentDescription = ""
-                        )
-                    })
-
-
-
-
+                Navbar()
             }
-        }) { innerPadding ->
+        }
+    ) { innerPadding ->
         Surface(
             modifier = Modifier
                 .padding(innerPadding)
@@ -142,12 +63,12 @@ fun mainpage(navController: NavController) {
             LazyColumn(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(start = 10.dp, top = 10.dp, end = 10.dp)
+                    .padding(start = 10.dp, end = 10.dp)
                     .background(color = Variables.bgColor),
                 verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.Top),
                 horizontalAlignment = Alignment.CenterHorizontally,
             )
-// Search bar
+           // Search bar
 
             {
                 item {
@@ -227,7 +148,7 @@ fun mainpage(navController: NavController) {
                                     color = Variables.primary300,
                                     shape = RoundedCornerShape(size = 999.dp)
                                 ),
-                            painter = painterResource(id = R.drawable.topimg2),
+                            painter = painterResource(id = R.drawable.topbarimg2),
                             contentDescription = ""
                         )
 
@@ -236,10 +157,8 @@ fun mainpage(navController: NavController) {
                 // Top main Image
 
                 item {
-                    Image(
-                        painter = painterResource(id = R.drawable.conimg),
-                        contentDescription = ""
-                    )
+                    Slider()
+
                 }
                 // Top Categories lazy row
                 item {
@@ -276,11 +195,17 @@ fun mainpage(navController: NavController) {
                                     )
                                     )
 
-                                Row (Modifier
-                                    .background(color = Color(0xFF9E9E9E))
-                                    .fillMaxWidth()
-                                    .height(1.dp)
-                                    .padding(start = Variables.xSm, top = Variables.xxSm, end = Variables.xSm, bottom = Variables.xxSm)){
+                                Row (
+                                    Modifier
+                                        .background(color = Color(0xFF9E9E9E))
+                                        .fillMaxWidth()
+                                        .height(1.dp)
+                                        .padding(
+                                            start = Variables.xSm,
+                                            top = Variables.xxSm,
+                                            end = Variables.xSm,
+                                            bottom = Variables.xxSm
+                                        )){
 
                                 }
                             }
@@ -374,11 +299,17 @@ fun mainpage(navController: NavController) {
                                     color = Variables.textActive,
                                 )
                             )
-                            Row (Modifier
-                                .background(color = Color(0xFF9E9E9E))
-                                .fillMaxWidth()
-                                .height(1.dp)
-                                .padding(start = Variables.xSm, top = Variables.xxSm, end = Variables.xSm, bottom = Variables.xxSm)){
+                            Row (
+                                Modifier
+                                    .background(color = Color(0xFF9E9E9E))
+                                    .fillMaxWidth()
+                                    .height(1.dp)
+                                    .padding(
+                                        start = Variables.xSm,
+                                        top = Variables.xxSm,
+                                        end = Variables.xSm,
+                                        bottom = Variables.xxSm
+                                    )){
 
                             }
                         }
@@ -391,7 +322,8 @@ fun mainpage(navController: NavController) {
                             item {
                                 Column(
                                     Modifier
-                                        .width(224.dp).clickable {  }
+                                        .width(224.dp)
+                                        .clickable { }
 
                                         .padding(start = 12.dp, end = 12.dp, bottom = 8.dp),
                                     verticalArrangement = Arrangement.spacedBy(

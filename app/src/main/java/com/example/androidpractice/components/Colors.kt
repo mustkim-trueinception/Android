@@ -6,7 +6,7 @@ import androidx.compose.ui.unit.dp
 
 object Variables {
 
-
+        val ShadesOfGray50: Color = Color(0xFFFAFAFA)
         val ShadesOfGray400: Color = Color(0xFFA3A3A3)
         val xxSm: Dp = 4.dp
         val ShadesOfGray300: Color = Color(0xFFD4D4D4)

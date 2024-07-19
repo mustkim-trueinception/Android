@@ -1,4 +1,4 @@
-package com.example.androidpractice.Screens
+package com.example.androidpractice.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -34,7 +34,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.androidpractice.Navigations.Route
+import com.example.androidpractice.navigations.Route
 import com.example.androidpractice.R
 import com.example.androidpractice.components.Buttons.ReusableButton
 import com.example.androidpractice.components.Variables
