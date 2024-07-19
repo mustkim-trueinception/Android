@@ -40,6 +40,7 @@ import com.example.androidpractice.components.carousel.Slider
 @Composable
 fun Mainpage() {
 
+
     Scaffold(
 
 

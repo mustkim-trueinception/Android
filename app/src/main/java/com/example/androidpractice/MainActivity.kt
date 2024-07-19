@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.ui.Modifier
 import com.example.androidpractice.navigations.Navigation
 import com.example.androidpractice.components.Variables
+import com.example.androidpractice.components.carousel.MainCont
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,8 +23,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier
                         .background(color = Variables.bgColor),
                 ) {
-                   // Slider()
-                    Navigation()
+                   MainCont()
+                    // Navigation()
                 }
 
             }
