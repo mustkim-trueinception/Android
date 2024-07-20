@@ -159,7 +159,6 @@ fun Mainpage() {
 
                 item {
                     Slider()
-
                 }
                 // Top Categories lazy row
                 item {
@@ -217,64 +216,59 @@ fun Mainpage() {
                         LazyRow(modifier = Modifier.height(146.dp)) {
                             item {
 
-                                CostCard(modifier = Modifier.clickable {  }
-                                   ,
-                                    Image = {
+                                CostCard(
+                                    image = {
                                         Image(
                                             painter = painterResource(id = R.drawable.elip),
                                             contentDescription = ""
                                         )
-                                    }, Text = "3D Printing"
+                                    }, text = "3D Printing"
                                 )
 
                                 CostCard(
-                                    modifier = Modifier.clickable {  },
-                                    Image = {
+                                    image = {
                                         Image(
                                             painter = painterResource(id = R.drawable.elip2),
                                             contentDescription = ""
                                         )
-                                    }, Text = "Development Boards"
+                                    }, text = "Development Boards"
                                 )
 
                                 CostCard(
-                                    modifier = Modifier.clickable {  },
-                                    Image = {
+                                    image = {
                                         Image(
                                             painter = painterResource(id = R.drawable.elip3),
                                             contentDescription = ""
                                         )
-                                    }, Text = "Raspberry Pi"
+                                    }, text = "Raspberry Pi"
                                 )
 
                                 CostCard(
-                                    modifier = Modifier.clickable {  },
-                                    Image = {
+                                    image = {
                                         Image(
                                             painter = painterResource(id = R.drawable.elip),
                                             contentDescription = ""
                                         )
-                                    }, Text = "3D Printing"
+                                    }, text = "3D Printing"
                                 )
 
                                 CostCard(
-                                    modifier = Modifier.clickable {  },
-                                    Image = {
+
+                                    image = {
                                         Image(
                                             painter = painterResource(id = R.drawable.elip2),
                                             contentDescription = ""
                                         )
-                                    }, Text = "Development Boards"
+                                    }, text = "Development Boards"
                                 )
 
                                 CostCard(
-                                    modifier = Modifier.clickable {  },
-                                    Image = {
+                                    image = {
                                         Image(
                                             painter = painterResource(id = R.drawable.elip3),
                                             contentDescription = ""
                                         )
-                                    }, Text = "Raspberry Pi"
+                                    }, text = "Raspberry Pi"
                                 )
 
                             }
