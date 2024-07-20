@@ -91,7 +91,7 @@ fun Navbar(){
         CostIconButton(
             modifier = Modifier.weight(1f),
             Text = "My Profile",
-            onClick = {  },
+            onClick = { },
             Icon = {
                 Image(
                     modifier = Modifier
