@@ -31,8 +31,6 @@ fun Carousel(){
         R.drawable.topimg4,
         R.drawable.topimg3,
         R.drawable.topimg2,
-
-
     )
     Imageslide(image = image)
 }
@@ -44,6 +42,7 @@ fun Imageslide(image:List<Int> )
     val pagerState = rememberPagerState { pagecount }
     val coroutineScope = rememberCoroutineScope()
 
+    // effect launched for auto image change after 3 seconds
     LaunchedEffect(Unit) {
         while (true){
             delay(3000)
@@ -51,7 +50,6 @@ fun Imageslide(image:List<Int> )
             pagerState.animateScrollToPage((pagerState.currentPage+1)% image.size)
         }
         }
-
     }
     Box (modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.BottomCenter){
       // Carousel slider
@@ -65,7 +63,13 @@ fun Imageslide(image:List<Int> )
         }
         // indicator
 
-        Row (modifier = Modifier.fillMaxWidth().padding(), verticalAlignment = Alignment.Bottom, horizontalArrangement = Arrangement.Center){
+        Row (
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(),
+            verticalAlignment = Alignment.Bottom,
+            horizontalArrangement = Arrangement.Center)
+        {
             repeat(pagecount){ itration->
                 val color = if (pagerState.currentPage == itration) Variables.CommonWhite else Variables.ShadesOfGray400
                 Box(modifier = Modifier
