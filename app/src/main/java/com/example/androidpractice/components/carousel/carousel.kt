@@ -28,7 +28,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun Carousel(){
     val image = listOf(
-        R.drawable.conimg,
+        R.drawable.topimg1,
         R.drawable.topimg5,
         R.drawable.topimg4,
         R.drawable.topimg3,

@@ -3,7 +3,6 @@ package com.example.androidpractice.screens
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -26,13 +25,12 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.androidpractice.R
 import com.example.androidpractice.components.CostCard
+import com.example.androidpractice.components.TopCategories
 import com.example.androidpractice.components.Variables
 import com.example.androidpractice.components.bottomnavbar.Navbar
 import com.example.androidpractice.components.carousel.Carousel
@@ -44,13 +42,12 @@ fun Mainpage() {
     Scaffold(
 
 
-
         bottomBar = {
 
-            NavigationBar (
+            NavigationBar(
                 containerColor = Variables.bgColor,
                 contentColor = Variables.bgColor,
-            ){
+            ) {
                 Navbar()
             }
         }
@@ -69,7 +66,7 @@ fun Mainpage() {
                 verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.Top),
                 horizontalAlignment = Alignment.CenterHorizontally,
             )
-           // Search bar
+            // Search bar
 
             {
                 item {
@@ -163,7 +160,8 @@ fun Mainpage() {
                 // Top Categories lazy row
                 item {
 
-                    Column(modifier = Modifier,
+                    Column(
+                        modifier = Modifier,
                         verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.Top),
                         horizontalAlignment = Alignment.Start,
                     ) {
@@ -183,8 +181,10 @@ fun Mainpage() {
                             ),
                             verticalAlignment = Alignment.CenterVertically,
                         ) {
-                            Column ( verticalArrangement = Arrangement.spacedBy(4.dp, Alignment.Top),
-                                horizontalAlignment = Alignment.Start,){
+                            Column(
+                                verticalArrangement = Arrangement.spacedBy(4.dp, Alignment.Top),
+                                horizontalAlignment = Alignment.Start,
+                            ) {
                                 Text(
                                     text = "Top Categories",
                                     style = TextStyle(
@@ -193,9 +193,9 @@ fun Mainpage() {
                                         fontWeight = FontWeight(600),
                                         color = Variables.textActive,
                                     )
-                                    )
+                                )
 
-                                Row (
+                                Row(
                                     Modifier
                                         .background(color = Color(0xFF9E9E9E))
                                         .fillMaxWidth()
@@ -205,11 +205,11 @@ fun Mainpage() {
                                             top = Variables.xxSm,
                                             end = Variables.xSm,
                                             bottom = Variables.xxSm
-                                        )){
+                                        )
+                                ) {
 
                                 }
                             }
-
 
 
                         }
@@ -283,8 +283,11 @@ fun Mainpage() {
                         verticalArrangement = Arrangement.spacedBy(20.dp, Alignment.Top),
                         horizontalAlignment = Alignment.Start
                     ) {
-                        Column (modifier = Modifier.padding(start = 8.dp),verticalArrangement = Arrangement.spacedBy(4.dp, Alignment.Top),
-                            horizontalAlignment = Alignment.Start){
+                        Column(
+                            modifier = Modifier.padding(start = 8.dp),
+                            verticalArrangement = Arrangement.spacedBy(4.dp, Alignment.Top),
+                            horizontalAlignment = Alignment.Start
+                        ) {
                             Text(
                                 text = "Top Products",
                                 style = TextStyle(
@@ -294,7 +297,7 @@ fun Mainpage() {
                                     color = Variables.textActive,
                                 )
                             )
-                            Row (
+                            Row(
                                 Modifier
                                     .background(color = Color(0xFF9E9E9E))
                                     .fillMaxWidth()
@@ -304,7 +307,8 @@ fun Mainpage() {
                                         top = Variables.xxSm,
                                         end = Variables.xSm,
                                         bottom = Variables.xxSm
-                                    )){
+                                    )
+                            ) {
 
                             }
                         }
@@ -315,221 +319,76 @@ fun Mainpage() {
                         ) {
 
                             item {
-                                Column(
-                                    Modifier
-                                        .width(224.dp)
-                                        .clickable { }
 
-                                        .padding(start = 12.dp, end = 12.dp, bottom = 8.dp),
-                                    verticalArrangement = Arrangement.spacedBy(
-                                        12.dp,
-                                        Alignment.Top
-                                    ),
-                                    horizontalAlignment = Alignment.Start,
-                                ) {
-                                    Text(
-                                        text = "Development Boards",
-                                        style = TextStyle(
-                                            fontSize = 14.sp,
-                                            lineHeight = 20.sp,
-                                            fontWeight = FontWeight(400),
-                                            fontStyle = FontStyle.Italic,
-                                            color = Variables.textInactive,
+
+                                TopCategories(
+                                    productname = "Raspberry PI 4 Model B With 4GB RAM",
+                                    image = {
+                                        Image(
+                                            modifier = Modifier
+                                                .width(180.dp)
+                                                .height(160.dp),
+                                            painter = painterResource(id = R.drawable.raspnew),
+                                            contentDescription = "image description"
                                         )
-                                    )
-                                    Image(
-                                        modifier = Modifier
-                                            .width(180.dp)
-                                            .height(160.dp),
-                                        painter = painterResource(id = R.drawable.stack),
-                                        contentDescription = "image description"
-
-                                    )
-                                    Text(
-                                        text = "Arduino Nano RP2040",
-
-                                        // S1/Regular
-                                        style = TextStyle(
-                                            fontSize = 16.sp,
-                                            lineHeight = 20.sp,
-                                            fontWeight = FontWeight(400),
-                                            color = Variables.textActive,
-                                        )
-                                    )
-                                    Text(
-                                        text = "free delivery",
-
-                                        // P2/Special/Italic
-                                        style = TextStyle(
-                                            fontSize = 12.sp,
-                                            lineHeight = 16.sp,
-                                            fontWeight = FontWeight(400),
-                                            fontStyle = FontStyle.Italic,
-                                            color = Variables.textActive,
-                                        )
-                                    )
-                                    Row(
-                                        horizontalArrangement = Arrangement.spacedBy(
-                                            6.dp,
-                                            Alignment.Start
-                                        ),
-                                        verticalAlignment = Alignment.CenterVertically,
-                                    ) {
+                                    },
+                                    badge = {
                                         Image(
                                             modifier = Modifier
                                                 .width(39.dp)
                                                 .height(20.dp),
                                             painter = painterResource(id = R.drawable.badge),
                                             contentDescription = "image description"
-
                                         )
-
-
-                                        Text(
-                                            text = "1563 reviews",
-
-                                            // P2/Special/Italic
-                                            style = TextStyle(
-                                                fontSize = 12.sp,
-                                                lineHeight = 16.sp,
-                                                fontWeight = FontWeight(400),
-                                                fontStyle = FontStyle.Italic,
-                                                color = Variables.textInactive,
-                                            )
-                                        )
-                                    }
-                                    Row(
-                                        Modifier
-                                            .width(82.dp)
-                                            .height(15.dp)
-                                            .background(
-                                                color = Variables.destructive500,
-                                                shape = RoundedCornerShape(size = 999.dp)
-                                            ),
-                                        // .padding(start = 3.dp, top = 2.dp, end = 4.dp, bottom = 4.dp)
-                                        horizontalArrangement = Arrangement.spacedBy(
-                                            4.dp,
-                                            Alignment.CenterHorizontally
-                                        ),
-                                        verticalAlignment = Alignment.CenterVertically,
-                                    ) {
-                                        Text(
-                                            text = "out of stock",
-                                            style = TextStyle(
-                                                fontSize = 10.sp,
-                                                lineHeight = 16.sp,
-                                                fontWeight = FontWeight(600),
-                                                color = Variables.CommonWhite,
-                                                letterSpacing = 0.2.sp,
-                                            )
-                                        )
-                                    }
-
-                                }
-                                Column(
-                                    Modifier
-                                        .width(224.dp)
-                                        .height(384.dp)
-                                        .padding(start = 12.dp, end = 12.dp, bottom = 8.dp),
-                                    verticalArrangement = Arrangement.spacedBy(
-                                        12.dp,
-                                        Alignment.Top
-                                    ),
-                                    horizontalAlignment = Alignment.Start,
-                                ) {
-                                    Text(
-                                        text = "Development Boards",
-                                        style = TextStyle(
-                                            fontSize = 14.sp,
-                                            lineHeight = 20.sp,
-                                            fontWeight = FontWeight(400),
-                                            fontStyle = FontStyle.Italic,
-                                            color = Variables.textInactive,
-                                        )
-                                    )
-                                    Image(
-                                        modifier = Modifier
-                                            .width(180.dp)
-                                            .height(160.dp),
-                                        painter = painterResource(id = R.drawable.raspnew),
-                                        contentDescription = "image description"
-
-                                    )
-                                    Text(
-                                        text = "Raspberry PI 4 Model B With 4GB RAM",
-                                        style = TextStyle(
-                                            fontSize = 16.sp,
-                                            lineHeight = 20.sp,
-                                            fontWeight = FontWeight(400),
-                                            color = Variables.textActive,
-                                        )
-                                    )
-                                    Text(
-                                        text = "free delivery",
-                                        style = TextStyle(
-                                            fontSize = 12.sp,
-                                            lineHeight = 16.sp,
-                                            fontWeight = FontWeight(400),
-                                            fontStyle = FontStyle.Italic,
-                                            color = Variables.textActive,
-                                        )
-                                    )
-                                    Row(
-                                        horizontalArrangement = Arrangement.spacedBy(
-                                            6.dp,
-                                            Alignment.Start
-                                        ),
-                                        verticalAlignment = Alignment.CenterVertically,
-                                    ) {
+                                    },
+                                    mrp = "₹ 6,400.00", price = "5,950"
+                                )
+                                TopCategories(
+                                    productname = "Arduino Nano RP2040",
+                                    badge = {
                                         Image(
                                             modifier = Modifier
                                                 .width(39.dp)
                                                 .height(20.dp),
                                             painter = painterResource(id = R.drawable.badge),
                                             contentDescription = "image description"
-
                                         )
-
-                                        Text(
-                                            text = "1563 reviews",
-                                            style = TextStyle(
-                                                fontSize = 12.sp,
-                                                lineHeight = 16.sp,
-                                                fontWeight = FontWeight(400),
-                                                fontStyle = FontStyle.Italic,
-                                                color = Variables.textInactive,
-                                            )
+                                    },
+                                    image = {
+                                        Image(
+                                            modifier = Modifier
+                                                .width(180.dp)
+                                                .height(160.dp),
+                                            painter = painterResource(id = R.drawable.stack),
+                                            contentDescription = "image description"
                                         )
                                     }
-                                    Row(
-                                        horizontalArrangement = Arrangement.spacedBy(
-                                            Variables.xSm,
-                                            Alignment.Start
-                                        ),
-                                        verticalAlignment = Alignment.CenterVertically,
-                                    ) {
-                                        Text(
-                                            text = "₹ 6,400.00",
-                                            style = TextStyle(
-                                                fontSize = 12.sp,
-                                                lineHeight = 16.sp,
-                                                fontWeight = FontWeight(400),
-                                                color = Variables.textDisabled,
-                                                textDecoration = TextDecoration.LineThrough,
-                                            )
-                                        )
-                                        Text(
-                                            text = "₹ 5,999.00",
-                                            style = TextStyle(
-                                                fontSize = 14.sp,
-                                                lineHeight = 20.sp,
-                                                fontWeight = FontWeight(700),
-                                                color = Variables.Green500,
-                                            )
-                                        )
-                                    }
+                                )
 
-                                }
+                                TopCategories(
+                                    productname = "sample",
+                                    image = {
+                                        Image(
+                                            modifier = Modifier
+                                                .width(180.dp)
+                                                .height(160.dp),
+                                            painter = painterResource(id = R.drawable.stack),
+                                            contentDescription = "image description"
+                                        )
+                                    },
+                                    badge = {
+                                        Image(
+                                            modifier = Modifier
+                                                .width(39.dp)
+                                                .height(20.dp),
+                                            painter = painterResource(id = R.drawable.badge),
+                                            contentDescription = "image description"
+                                        )
+                                    },
+                                    mrp = "₹ 6,400.00", price = "6,000"
+                                )
+
+
                             }
                         }
                     }
