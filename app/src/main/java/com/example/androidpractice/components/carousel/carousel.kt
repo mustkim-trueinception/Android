@@ -11,11 +11,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.androidpractice.R
@@ -56,7 +58,7 @@ fun Imageslide(image:List<Int> )
         HorizontalPager(pagerState)
         {
             page -> for (index in 0..image.size){
-            Image(modifier = Modifier,
+            Image(modifier = Modifier.clip(shape = RoundedCornerShape(12.dp)),
                 painter = painterResource(id = image[page]),
                 contentDescription = "")
             }

@@ -1,5 +1,6 @@
 package com.example.androidpractice.components
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -23,18 +24,18 @@ import androidx.compose.ui.unit.sp
 fun CostCard(
     modifier: Modifier = Modifier,
     image:@Composable (() -> Unit)? = null,
-    text:String = "",
+    text:String = ""
 ) {
 //    Surface(onClick = onClick, shape = Shape) {
 
 
     Column(
         modifier = modifier
-            .clickable {  }
-            .clip(shape = RoundedCornerShape(99.dp))
+            .clip(shape = RoundedCornerShape(8.dp))
             .width(113.6.dp)
             .height(145.60001.dp)
-           .background(color = Variables.bgColor, shape = RoundedCornerShape(size = Variables.xSm))
+            .clickable { Log.d("TopCategories", " is clicked moving to $") }
+            .background(color = Variables.bgColor, shape = RoundedCornerShape(size = Variables.xSm))
             .padding(
                 start = Variables.sm,
                 top = Variables.xSm,
