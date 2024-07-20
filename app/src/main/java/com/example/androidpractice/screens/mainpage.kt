@@ -35,7 +35,7 @@ import com.example.androidpractice.R
 import com.example.androidpractice.components.CostCard
 import com.example.androidpractice.components.Variables
 import com.example.androidpractice.components.bottomnavbar.Navbar
-import com.example.androidpractice.components.carousel.Slider
+import com.example.androidpractice.components.carousel.Carousel
 
 @Composable
 fun Mainpage() {
@@ -155,10 +155,10 @@ fun Mainpage() {
 
                     }
                 }
-                // Top main Image
+                // Carousel Slider Image
 
                 item {
-                    Slider()
+                    Carousel()
                 }
                 // Top Categories lazy row
                 item {

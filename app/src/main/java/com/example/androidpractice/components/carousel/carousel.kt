@@ -24,7 +24,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @Composable
-fun Slider(){
+fun Carousel(){
     val image = listOf(
         R.drawable.conimg,
         R.drawable.topimg5,
@@ -54,6 +54,7 @@ fun Imageslide(image:List<Int> )
 
     }
     Box (modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.BottomCenter){
+      // Carousel slider
         HorizontalPager(pagerState)
         {
             page -> for (index in 0..image.size){
@@ -62,6 +63,8 @@ fun Imageslide(image:List<Int> )
                 contentDescription = "")
             }
         }
+        // indicator
+
         Row (modifier = Modifier.fillMaxWidth().padding(), verticalAlignment = Alignment.Bottom, horizontalArrangement = Arrangement.Center){
             repeat(pagecount){ itration->
                 val color = if (pagerState.currentPage == itration) Variables.CommonWhite else Variables.ShadesOfGray400
