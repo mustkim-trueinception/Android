@@ -16,15 +16,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-                Column(
-                    modifier = Modifier
-                        .background(color = Variables.bgColor),
-                ) {
-                  // MainCont()
-                    Navigation()
-                }
+            Column(
+                modifier = Modifier
+                    .background(color = Variables.bgColor),
+            ) {
+                Navigation()
             }
         }
     }
+}
 
 

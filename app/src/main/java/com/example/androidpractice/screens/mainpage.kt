@@ -1,5 +1,6 @@
 package com.example.androidpractice.screens
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -35,6 +36,8 @@ import com.example.androidpractice.components.Variables
 import com.example.androidpractice.components.bottomnavbar.Navbar
 import com.example.androidpractice.components.carousel.Carousel
 
+
+@SuppressLint("CoroutineCreationDuringComposition")
 @Composable
 fun Mainpage() {
     Scaffold(
@@ -142,11 +145,9 @@ fun Mainpage() {
                             painter = painterResource(id = R.drawable.topbarimg2),
                             contentDescription = ""
                         )
-
                     }
                 }
                 // Carousel Slider Image
-
                 item {
                     Carousel()
                 }
@@ -205,9 +206,11 @@ fun Mainpage() {
                             }
                         }
                         LazyRow(
-                            modifier = Modifier.height(146.dp))
+                            modifier = Modifier.height(146.dp)
+                        )
                         {
                             item {
+
                                 CostCard(
                                     image = {
                                         Image(
@@ -294,10 +297,8 @@ fun Mainpage() {
                                         start = Variables.xSm,
                                         top = Variables.xxSm,
                                         end = Variables.xSm,
-                                        bottom = Variables.xxSm
-                                    )
+                                        bottom = Variables.xxSm)
                             ) {
-
                             }
                         }
                         LazyRow(
@@ -324,8 +325,9 @@ fun Mainpage() {
                                             contentDescription = "image description"
                                         )
                                     },
-                                    mrp = "₹ 6,400.00", price = "5,950"
-                                )
+                                    mrp = "₹ 6,400.00",
+                                    price = "5,950")
+
                                 TopCategories(
                                     productname = "Arduino Nano RP2040",
                                     badge = {
@@ -345,8 +347,7 @@ fun Mainpage() {
                                             painter = painterResource(id = R.drawable.stack),
                                             contentDescription = "image description"
                                         )
-                                    }
-                                )
+                                    })
 
                                 TopCategories(
                                     productname = "sample",
@@ -368,16 +369,14 @@ fun Mainpage() {
                                             contentDescription = "image description"
                                         )
                                     },
-                                    mrp = "₹ 6,400.00", price = "6,000"
-                                )
-
-
+                                    mrp = "₹ 6,400.00",
+                                    price = "6,000")
                             }
                         }
                     }
                 }
+
             }
         }
     }
 }
-

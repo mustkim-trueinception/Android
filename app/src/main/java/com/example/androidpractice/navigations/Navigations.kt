@@ -36,7 +36,7 @@ fun Navigation(){
         composable<Route.Welcome> { Welcome(navController) }
         composable<Route.Login> { Login(navController) }
         composable<Route.Signup> { Signup(navController) }
-        composable<Route.Home> { Mainpage()  }
+        composable<Route.Home> {  Mainpage()  }
 
     }
 }
