@@ -50,10 +50,8 @@ fun Login(navController: NavController) {
     Scaffold(modifier = Modifier.fillMaxSize(),
     ) { innerPadding ->
         Surface (modifier = Modifier.padding(innerPadding)
-            .background(color = Variables.bgColor)) {
-
-
-
+            .background(color = Variables.bgColor))
+        {
         // This is check box verialble
 
     var checked by remember { mutableStateOf(true) }
@@ -71,7 +69,6 @@ fun Login(navController: NavController) {
             horizontalAlignment = Alignment.Start,
             modifier = Modifier
                 .fillMaxWidth()
-
         ) {
             Text(
                 text = "Hey, Hello 👋🏻 ",
@@ -92,7 +89,6 @@ fun Login(navController: NavController) {
                 horizontalAlignment = Alignment.Start,
                 modifier = Modifier
                     .fillMaxWidth()
-
             ) {
                 Row(
                     horizontalArrangement = Arrangement.spacedBy(4.dp, Alignment.Start),
@@ -136,7 +132,6 @@ fun Login(navController: NavController) {
                     }
                 )
             }
-
             // PassWord filling
             Column(
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
@@ -260,7 +255,6 @@ fun Login(navController: NavController) {
                 horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.Start),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-
                 Text(text = "New here? Create an account.")
 
                 Text(
@@ -275,5 +269,4 @@ fun Login(navController: NavController) {
         }
     }
 
-}
-    }}
+}}}

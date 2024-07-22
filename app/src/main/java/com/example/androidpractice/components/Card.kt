@@ -24,11 +24,8 @@ import androidx.compose.ui.unit.sp
 fun CostCard(
     modifier: Modifier = Modifier,
     image:@Composable (() -> Unit)? = null,
-    text:String = ""
-) {
-//    Surface(onClick = onClick, shape = Shape) {
-
-
+    text:String = "")
+{
     Column(
         modifier = modifier
             .clip(shape = RoundedCornerShape(8.dp))
@@ -45,9 +42,6 @@ fun CostCard(
         ,verticalArrangement = Arrangement.spacedBy(Variables.xSm, Alignment.Top),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        // Child views.
-
-
         if (image != null) {
             image()
         }
@@ -61,8 +55,5 @@ fun CostCard(
                     textAlign = TextAlign.Center,
                 )
             )
-
     }
-
 }
-//}

@@ -37,13 +37,8 @@ import com.example.androidpractice.components.carousel.Carousel
 
 @Composable
 fun Mainpage() {
-
-
     Scaffold(
-
-
         bottomBar = {
-
             NavigationBar(
                 containerColor = Variables.bgColor,
                 contentColor = Variables.bgColor,
@@ -67,7 +62,6 @@ fun Mainpage() {
                 horizontalAlignment = Alignment.CenterHorizontally,
             )
             // Search bar
-
             {
                 item {
                     Row(
@@ -88,7 +82,6 @@ fun Mainpage() {
                             )
 
                             .width(316.dp)
-
                             .background(
                                 color = Variables.Grey50,
                                 shape = RoundedCornerShape(size = 999.dp)
@@ -210,12 +203,11 @@ fun Mainpage() {
 
                                 }
                             }
-
-
                         }
-                        LazyRow(modifier = Modifier.height(146.dp)) {
+                        LazyRow(
+                            modifier = Modifier.height(146.dp))
+                        {
                             item {
-
                                 CostCard(
                                     image = {
                                         Image(
@@ -224,7 +216,6 @@ fun Mainpage() {
                                         )
                                     }, text = "3D Printing"
                                 )
-
                                 CostCard(
                                     image = {
                                         Image(
@@ -233,7 +224,6 @@ fun Mainpage() {
                                         )
                                     }, text = "Development Boards"
                                 )
-
                                 CostCard(
                                     image = {
                                         Image(
@@ -273,8 +263,6 @@ fun Mainpage() {
 
                             }
                         }
-
-
                     }
                 }
                 item {
@@ -314,13 +302,8 @@ fun Mainpage() {
                         }
                         LazyRow(
                             Modifier
-
-
                         ) {
-
                             item {
-
-
                                 TopCategories(
                                     productname = "Raspberry PI 4 Model B With 4GB RAM",
                                     image = {

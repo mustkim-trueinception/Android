@@ -33,13 +33,12 @@ import com.example.androidpractice.components.Variables
 
 @Composable
 fun Welcome(navController: NavController) {
-
     Scaffold(modifier = Modifier.fillMaxSize(),
-    ) { innerPadding ->
+    )
+    { innerPadding ->
         Surface (modifier = Modifier.padding(innerPadding)
-            .background(color = Variables.CommonWhite)) {
-
-
+            .background(color = Variables.CommonWhite))
+        {
     Column(
         Modifier
             .fillMaxWidth()
@@ -49,7 +48,6 @@ fun Welcome(navController: NavController) {
     )
     {
         // Heading Word Hello
-
         Text(
             modifier = Modifier
                 .width(398.dp)

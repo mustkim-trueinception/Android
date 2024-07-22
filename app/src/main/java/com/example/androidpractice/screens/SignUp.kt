@@ -42,16 +42,12 @@ import com.example.androidpractice.components.Variables
 
 @Composable
 fun Signup(navController: NavController) {
-
     Scaffold(modifier = Modifier.fillMaxSize(),
     ) { innerPadding ->
 
         Surface (modifier = Modifier.padding(innerPadding)
             .background(color = Variables.bgColor)) {
-
-
     // Main Content page
-
     Column(
         Modifier
             .fillMaxWidth()
@@ -67,7 +63,6 @@ fun Signup(navController: NavController) {
             horizontalAlignment = Alignment.Start,
         ) {
             Text(
-
                 text = "Create Account",
                 Modifier
                     .fillMaxWidth()
@@ -236,9 +231,7 @@ fun Signup(navController: NavController) {
                 horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.Start),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-
                 Text(text = "New here? Create an account.")
-
                 Text(
                     modifier = Modifier
                         .clickable {
@@ -249,8 +242,6 @@ fun Signup(navController: NavController) {
                     textAlign = TextAlign.Center
                 )
             }
-
-
         }
     }
 }}
