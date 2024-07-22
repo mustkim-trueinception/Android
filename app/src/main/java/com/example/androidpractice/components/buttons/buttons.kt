@@ -1,4 +1,4 @@
-package com.example.androidpractice.components.Buttons
+package com.example.androidpractice.components.buttons
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues

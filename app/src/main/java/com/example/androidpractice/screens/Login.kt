@@ -40,7 +40,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.androidpractice.navigations.Route
 import com.example.androidpractice.R
-import com.example.androidpractice.components.Buttons.ReusableButton
+import com.example.androidpractice.components.buttons.ReusableButton
 import com.example.androidpractice.components.Variables
 
 

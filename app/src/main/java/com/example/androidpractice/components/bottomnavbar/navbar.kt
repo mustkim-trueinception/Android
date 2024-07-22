@@ -16,7 +16,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.androidpractice.R
-import com.example.androidpractice.components.Buttons.CostIconButton
+import com.example.androidpractice.components.buttons.CostIconButton
 import com.example.androidpractice.components.Variables
 
 @Composable
@@ -33,9 +33,9 @@ fun Navbar(){
     ) {
         CostIconButton(
             modifier = Modifier.weight(1f),
-            Text = "Home",
+            text = "Home",
             onClick = {  },
-            Icon = {
+            icon = {
                 Image(
                     modifier = Modifier
                         .padding(1.dp)
@@ -48,9 +48,9 @@ fun Navbar(){
 
         CostIconButton(
             modifier = Modifier.weight(1f),
-            Text = "Offers",
+            text = "Offers",
             onClick = { },
-            Icon = {
+            icon = {
                 Image(
                     modifier = Modifier
                         .padding(1.dp)
@@ -62,9 +62,9 @@ fun Navbar(){
             })
         CostIconButton(
             modifier = Modifier.weight(1f),
-            Text = "Category",
+            text = "Category",
             onClick = {  },
-            Icon = {
+            icon = {
                 Image(
                     modifier = Modifier
                         .padding(1.dp)
@@ -76,9 +76,9 @@ fun Navbar(){
             })
         CostIconButton(
             modifier = Modifier.weight(1f),
-            Text = "Contact",
+            text = "Contact",
             onClick = { },
-            Icon = {
+            icon = {
                 Image(
                     modifier = Modifier
                         .padding(1.dp)
@@ -90,9 +90,9 @@ fun Navbar(){
             })
         CostIconButton(
             modifier = Modifier.weight(1f),
-            Text = "My Profile",
+            text = "My Profile",
             onClick = { },
-            Icon = {
+            icon = {
                 Image(
                     modifier = Modifier
                         .padding(1.dp)
