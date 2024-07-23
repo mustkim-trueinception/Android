@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -29,12 +30,13 @@ fun TopCategories(
     productname: String = "Arduino Nano RP2040",
     deliverycharges: String = "free delivery",
     price: String  ? =null,
-    mrp: String  = "0000",
+    mrp: String ? = null,
     badge: @Composable (() -> Unit)? = null,
     reviews:String = "1563 reviews",
 ) {
     Column(modifier =
     modifier
+        .clip(shape = RoundedCornerShape(8.dp))
         .width(224.dp)
         .padding(start = 12.dp, end = 12.dp, bottom = 8.dp)
         .clickable { },
@@ -111,7 +113,7 @@ fun TopCategories(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text(
-                    text = "₹ $mrp",
+                    text = mrp ?: "",
                     style = TextStyle(
                         fontSize = 12.sp,
                         lineHeight = 16.sp,

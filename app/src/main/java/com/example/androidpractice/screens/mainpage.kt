@@ -237,10 +237,10 @@ fun Mainpage() {
                                 CostCard(
                                     image = {
                                         Image(
-                                            painter = painterResource(id = R.drawable.elip),
+                                            painter = painterResource(id = R.drawable.categeries4),
                                             contentDescription = ""
                                         )
-                                    }, text = "3D Printing"
+                                    }, text = "Wires & Cables"
                                 )
 
                                 CostCard(
@@ -348,13 +348,13 @@ fun Mainpage() {
                                     })
 
                                 TopCategories(
-                                    productname = "sample",
+                                    productname = "3D Printer Extruder 0.5mm nozzle",
                                     image = {
                                         Image(
                                             modifier = Modifier
                                                 .width(180.dp)
                                                 .height(160.dp),
-                                            painter = painterResource(id = R.drawable.stack),
+                                            painter = painterResource(id = R.drawable.product3),
                                             contentDescription = "image description"
                                         )
                                     },
@@ -367,8 +367,8 @@ fun Mainpage() {
                                             contentDescription = "image description"
                                         )
                                     },
-                                    mrp = "₹ 6,400.00",
-                                    price = "6,000")
+
+                                    price = "5,440.00")
                             }
                         }
                     }
