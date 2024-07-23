@@ -82,7 +82,6 @@ fun Welcome(navController: NavController) {
             verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.CenterVertically),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-
             ReusableButton(
                 startIcon = {
                     Image(
@@ -138,7 +137,7 @@ fun Welcome(navController: NavController) {
                     textAlign = TextAlign.Center,
                 )
             )
-// Bottom button
+           // Bottom button
             ReusableButton(
                 endIcon = {
                     Icon(
@@ -160,7 +159,7 @@ fun Welcome(navController: NavController) {
                     color = Variables.textIconographyDarkActive,
                     textAlign = TextAlign.Center
                 ),
-                onClick = { navController.navigate(Route.Signup) },
+                onClick = { navController.navigate(Route.Login) },
                 modifier = Modifier
 
             )

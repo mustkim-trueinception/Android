@@ -80,14 +80,11 @@ fun Mainpage() {
                             .shadow(
                                 elevation = 0.dp,
                                 spotColor = Color(0xFFE0E0E0),
-                                ambientColor = Color(0xFFE0E0E0)
-                            )
-
+                                ambientColor = Color(0xFFE0E0E0))
                             .width(316.dp)
                             .background(
                                 color = Variables.Grey50,
-                                shape = RoundedCornerShape(size = 999.dp)
-                            )
+                                shape = RoundedCornerShape(size = 999.dp))
                             .padding(start = 12.dp, top = 4.dp, end = 12.dp, bottom = 4.dp),
                             value = "Search for parts",
                             onValueChange = {},
@@ -152,7 +149,6 @@ fun Mainpage() {
                 }
                 // Top Categories lazy row
                 item {
-
                     Column(
                         modifier = Modifier,
                         verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.Top),
@@ -187,7 +183,6 @@ fun Mainpage() {
                                         color = Variables.textActive,
                                     )
                                 )
-
                                 Row(
                                     Modifier
                                         .background(color = Color(0xFF9E9E9E))

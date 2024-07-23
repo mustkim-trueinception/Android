@@ -103,7 +103,6 @@ fun TopCategories(
                 )
             )
         }
-
         if (price != null) {
             Row(
                 horizontalArrangement = Arrangement.spacedBy(
@@ -132,8 +131,7 @@ fun TopCategories(
                     )
                 )
             }}
-            else{
-
+        else{
             Row(
                 Modifier
                     .width(82.dp)

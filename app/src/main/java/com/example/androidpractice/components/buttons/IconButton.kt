@@ -24,7 +24,6 @@ fun CostIconButton(
                     shape: RoundedCornerShape = RoundedCornerShape(size = Variables.md),
                     text:String = "")
        {
-
         Surface(
             shape = shape,
             modifier = modifier
@@ -42,7 +41,6 @@ fun CostIconButton(
                 verticalArrangement = Arrangement.spacedBy(Variables.xxSm, Alignment.Top),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-
                 if (icon!= null) {
                     icon()
                 }

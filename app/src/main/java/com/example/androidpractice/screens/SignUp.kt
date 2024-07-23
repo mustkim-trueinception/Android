@@ -80,9 +80,7 @@ fun Signup(navController: NavController) {
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
                 horizontalAlignment = Alignment.Start,
             ) {
-
                 Row {
-
                     Text(
                         text = "Full Name",
                         fontFamily = FontFamily.SansSerif,
@@ -112,14 +110,12 @@ fun Signup(navController: NavController) {
 
                 )
             }
-
             Column(
                 Modifier
                     .fillMaxWidth(),
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
                 horizontalAlignment = Alignment.Start,
             ) {
-
                 Row {
                     Text(
                         text = "Email ",
@@ -144,7 +140,6 @@ fun Signup(navController: NavController) {
                     leadingIcon = {
                         Icon(imageVector = Icons.Default.Email, contentDescription = "EmailIcon")
                     }
-
                 )
             }
             Column(
@@ -153,10 +148,7 @@ fun Signup(navController: NavController) {
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
                 horizontalAlignment = Alignment.Start,
             ) {
-                // Child views.
-
                 Row {
-
                     Text(
                         text = "Password",
                         fontFamily = FontFamily.SansSerif,
@@ -199,7 +191,6 @@ fun Signup(navController: NavController) {
             verticalArrangement = Arrangement.spacedBy(32.dp, Alignment.Top),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-
             ReusableButton(
                 endIcon = {
                     Icon(
@@ -224,7 +215,7 @@ fun Signup(navController: NavController) {
                 onClick = {navController.navigate(Route.Home)},
                 modifier = Modifier
             )
-// bottom row
+            // bottom row
             Row(
                 Modifier
                     .height(24.dp),

@@ -46,14 +46,12 @@ import com.example.androidpractice.components.Variables
 
 @Composable
 fun Login(navController: NavController) {
-
     Scaffold(modifier = Modifier.fillMaxSize(),
     ) { innerPadding ->
         Surface (modifier = Modifier.padding(innerPadding)
             .background(color = Variables.bgColor))
         {
         // This is check box verialble
-
     var checked by remember { mutableStateOf(true) }
 
     Column(
@@ -209,7 +207,6 @@ fun Login(navController: NavController) {
                 Text(text = "Remember Me")
             }
         }
-
         // Bottom Login Button
         Column(
             Modifier
@@ -221,9 +218,7 @@ fun Login(navController: NavController) {
             verticalArrangement = Arrangement.spacedBy(32.dp, Alignment.Top),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-
             ReusableButton(
-
                 endIcon = {
                     Icon(
                         modifier = Modifier
@@ -246,9 +241,8 @@ fun Login(navController: NavController) {
                 ),
                 onClick = {navController.navigate(Route.Home)},
                 modifier = Modifier
-
             )
-// bottom row
+            // bottom row
             Row(
                 Modifier
                     .height(24.dp),
@@ -256,7 +250,6 @@ fun Login(navController: NavController) {
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text(text = "New here? Create an account.")
-
                 Text(
                     modifier = Modifier
                         .clickable { navController.navigate(Route.Signup) },
