@@ -45,6 +45,7 @@ fun Imageslide(image:List<Int> )
     val coroutineScope = rememberCoroutineScope()
 
     // effect launched for auto image change after 3 seconds
+
     LaunchedEffect(Unit) {
         while (true){
             delay(3000)
@@ -78,10 +79,7 @@ fun Imageslide(image:List<Int> )
                     .padding(2.dp)
                     .size(7.dp)
                     .background(shape = CircleShape, color = color))
-
             }
-
         }
-
     }
 }

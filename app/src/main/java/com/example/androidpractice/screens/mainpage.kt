@@ -55,7 +55,6 @@ fun Mainpage() {
                 .padding(innerPadding)
                 .background(color = Variables.primary500)
         ) {
-
             LazyColumn(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -210,7 +209,6 @@ fun Mainpage() {
                         )
                         {
                             item {
-
                                 CostCard(
                                     image = {
                                         Image(
