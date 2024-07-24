@@ -31,6 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.androidpractice.R
 import com.example.androidpractice.presentation.components.CostCard
+import com.example.androidpractice.presentation.components.CostomBadge
 import com.example.androidpractice.presentation.components.TopCategories
 import com.example.androidpractice.presentation.components.Variables
 import com.example.androidpractice.presentation.components.bottomnavbar.Navbar
@@ -80,11 +81,13 @@ fun Mainpage() {
                             .shadow(
                                 elevation = 0.dp,
                                 spotColor = Color(0xFFE0E0E0),
-                                ambientColor = Color(0xFFE0E0E0))
+                                ambientColor = Color(0xFFE0E0E0)
+                            )
                             .width(316.dp)
                             .background(
                                 color = Variables.Grey50,
-                                shape = RoundedCornerShape(size = 999.dp))
+                                shape = RoundedCornerShape(size = 999.dp)
+                            )
                             .padding(start = 12.dp, top = 4.dp, end = 12.dp, bottom = 4.dp),
                             value = "Search for parts",
                             onValueChange = {},
@@ -290,7 +293,8 @@ fun Mainpage() {
                                         start = Variables.xSm,
                                         top = Variables.xxSm,
                                         end = Variables.xSm,
-                                        bottom = Variables.xxSm)
+                                        bottom = Variables.xxSm
+                                    )
                             ) {
                             }
                         }
@@ -309,29 +313,14 @@ fun Mainpage() {
                                             contentDescription = "image description"
                                         )
                                     },
-                                    badge = {
-                                        Image(
-                                            modifier = Modifier
-                                                .width(39.dp)
-                                                .height(20.dp),
-                                            painter = painterResource(id = R.drawable.badge),
-                                            contentDescription = "image description"
-                                        )
-                                    },
+                                    badge = {CostomBadge(rating = 4.0)},
                                     mrp = "₹ 6,400.00",
                                     price = "5,950")
 
+
                                 TopCategories(
                                     productname = "Arduino Nano RP2040",
-                                    badge = {
-                                        Image(
-                                            modifier = Modifier
-                                                .width(39.dp)
-                                                .height(20.dp),
-                                            painter = painterResource(id = R.drawable.badge),
-                                            contentDescription = "image description"
-                                        )
-                                    },
+                                    badge = { CostomBadge(rating = 5.0)},
                                     image = {
                                         Image(
                                             modifier = Modifier
@@ -353,16 +342,7 @@ fun Mainpage() {
                                             contentDescription = "image description"
                                         )
                                     },
-                                    badge = {
-                                        Image(
-                                            modifier = Modifier
-                                                .width(39.dp)
-                                                .height(20.dp),
-                                            painter = painterResource(id = R.drawable.badge),
-                                            contentDescription = "image description"
-                                        )
-                                    },
-
+                                    badge = {CostomBadge(rating = 4.8)},
                                     price = "5,440.00")
                             }
                         }
