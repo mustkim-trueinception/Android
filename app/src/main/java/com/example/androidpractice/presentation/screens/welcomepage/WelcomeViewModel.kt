@@ -10,7 +10,7 @@ class WelcomeViewModel @Inject constructor(
     val helloRepo: HelloRepo
 ) : ViewModel() {
 
-     fun gethellostring(): String {
+    fun gethellostring(): String {
         return helloRepo.sayHello()
     }
 }

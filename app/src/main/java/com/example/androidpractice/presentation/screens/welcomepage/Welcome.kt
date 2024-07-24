@@ -35,139 +35,144 @@ import com.example.androidpractice.presentation.navigations.Route
 @Composable
 fun Welcome(navController: NavController, welcomeViewModel: WelcomeViewModel = hiltViewModel()) {
 
-    Scaffold(modifier = Modifier.fillMaxSize(),
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
     )
     { innerPadding ->
-        Surface (modifier = Modifier
-            .padding(innerPadding)
-            .background(color = Variables.CommonWhite))
-        {
-    Column(
-        Modifier
-            .fillMaxWidth()
-            .fillMaxSize()
-            .padding(15.dp), verticalArrangement = Arrangement.SpaceBetween,
-        horizontalAlignment = Alignment.CenterHorizontally
-    )
-    {
-        // Heading Word Hello
-        Text(
+        Surface(
             modifier = Modifier
-                .width(398.dp)
-                .height(40.dp),
-            text = "Hey, Hello \uD83D\uDC4B\uD83C\uDFFB ",
-            style = TextStyle(
-                fontSize = 24.sp,
-                lineHeight = 32.sp,
-                fontWeight = FontWeight(700),
-                color = Variables.textInactive,
-            )
+                .padding(innerPadding)
+                .background(color = Variables.CommonWhite)
         )
+        {
+            Column(
+                Modifier
+                    .fillMaxWidth()
+                    .fillMaxSize()
+                    .padding(15.dp), verticalArrangement = Arrangement.SpaceBetween,
+                horizontalAlignment = Alignment.CenterHorizontally
+            )
+            {
+                // Heading Word Hello
+                Text(
+                    modifier = Modifier
+                        .width(398.dp)
+                        .height(40.dp),
+                    text = welcomeViewModel.gethellostring(),
+                    style = TextStyle(
+                        fontSize = 24.sp,
+                        lineHeight = 32.sp,
+                        fontWeight = FontWeight(700),
+                        color = Variables.textInactive,
+                    )
+                )
 
 // Main Image here
 
-        Image(
-            modifier = Modifier,
-            painter = painterResource(id = R.drawable.all),
-            contentDescription = "",
-        )
-
-        // Buttons are Used
-        Column(
-            Modifier
-                .fillMaxWidth()
-                .padding(
-                    start = Variables.xSm,
-                    end = Variables.xSm,
-                    top = Variables.xSm,
-                    bottom = Variables.xSm
-                ),
-            verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.CenterVertically),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            ReusableButton(
-                startIcon = {
-                    Image(
-                        modifier = Modifier
-                            .width(24.dp)
-                            .height(24.dp),
-                        painter = painterResource(id = R.drawable.google),
-                        contentDescription = ""
-                    )
-                }, colors = ButtonDefaults.buttonColors(Variables.Grey200), onClick = {},
-                text = "Continue With Google",
-                textStyle = TextStyle(
-                    fontSize = 16.sp,
-                    lineHeight = 24.sp,
-                    fontWeight = FontWeight(600),
-                    color = Variables.Grey900,
-                ),
-                modifier = Modifier
-            )
-
-            ReusableButton(
-                startIcon = {
-                    Image(
-                        modifier = Modifier
-                            .width(24.dp)
-                            .height(24.dp),
-                        painter = painterResource(id = R.drawable.github),
-                        contentDescription = ""
-                    )
-                }, colors = ButtonDefaults.buttonColors(Variables.Grey200),
-                onClick = {},
-                text = "Continue With Github",
-                textStyle = TextStyle(
-                    fontSize = 16.sp,
-                    lineHeight = 24.sp,
-                    fontWeight = FontWeight(600),
-                    color = Variables.Grey900,
-                ),
-                modifier = Modifier
-            )
-
-            Text(
-                modifier = Modifier
-                    .width(23.dp)
-                    .height(24.dp),
-                text = "OR",
-
-                style = TextStyle(
-                    fontSize = 16.sp,
-                    lineHeight = 24.sp,
-                    fontWeight = FontWeight(600),
-                    color = Variables.textInactive,
-                    textAlign = TextAlign.Center,
+                Image(
+                    modifier = Modifier,
+                    painter = painterResource(id = R.drawable.all),
+                    contentDescription = "",
                 )
-            )
-           // Bottom button
-            ReusableButton(
-                endIcon = {
-                    Icon(
-                        modifier = Modifier
-                            .padding(1.dp)
-                            .width(20.dp)
-                            .height(20.dp),
-                        painter = painterResource(id = R.drawable.right),
-                        tint = Color.White,
-                        contentDescription = ""
-                    )
-                },
-                colors = ButtonDefaults.buttonColors(Variables.primary500),
-                text = "Continue With Email",
-                textStyle = TextStyle(
-                    fontSize = 16.sp,
-                    lineHeight = 24.sp,
-                    fontWeight = FontWeight(400),
-                    color = Variables.textIconographyDarkActive,
-                    textAlign = TextAlign.Center
-                ),
-                onClick = { navController.navigate(Route.Login) },
-                modifier = Modifier
 
-            )
+                // Buttons are Used
+                Column(
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(
+                            start = Variables.xSm,
+                            end = Variables.xSm,
+                            top = Variables.xSm,
+                            bottom = Variables.xSm
+                        ),
+                    verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.CenterVertically),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                ) {
+                    ReusableButton(
+                        startIcon = {
+                            Image(
+                                modifier = Modifier
+                                    .width(24.dp)
+                                    .height(24.dp),
+                                painter = painterResource(id = R.drawable.google),
+                                contentDescription = ""
+                            )
+                        }, colors = ButtonDefaults.buttonColors(Variables.Grey200), onClick = {},
+                        text = "Continue With Google",
+                        textStyle = TextStyle(
+                            fontSize = 16.sp,
+                            lineHeight = 24.sp,
+                            fontWeight = FontWeight(600),
+                            color = Variables.Grey900,
+                        ),
+                        modifier = Modifier
+                    )
+
+                    ReusableButton(
+                        startIcon = {
+                            Image(
+                                modifier = Modifier
+                                    .width(24.dp)
+                                    .height(24.dp),
+                                painter = painterResource(id = R.drawable.github),
+                                contentDescription = ""
+                            )
+                        }, colors = ButtonDefaults.buttonColors(Variables.Grey200),
+                        onClick = {},
+                        text = "Continue With Github",
+                        textStyle = TextStyle(
+                            fontSize = 16.sp,
+                            lineHeight = 24.sp,
+                            fontWeight = FontWeight(600),
+                            color = Variables.Grey900,
+                        ),
+                        modifier = Modifier
+                    )
+
+                    Text(
+                        modifier = Modifier
+                            .width(23.dp)
+                            .height(24.dp),
+                        text = "OR",
+
+                        style = TextStyle(
+                            fontSize = 16.sp,
+                            lineHeight = 24.sp,
+                            fontWeight = FontWeight(600),
+                            color = Variables.textInactive,
+                            textAlign = TextAlign.Center,
+                        )
+                    )
+                    // Bottom button
+                    ReusableButton(
+                        endIcon = {
+                            Icon(
+                                modifier = Modifier
+                                    .padding(1.dp)
+                                    .width(20.dp)
+                                    .height(20.dp),
+                                painter = painterResource(id = R.drawable.right),
+                                tint = Color.White,
+                                contentDescription = ""
+                            )
+                        },
+                        colors = ButtonDefaults.buttonColors(Variables.primary500),
+                        text = "Continue With Email",
+                        textStyle = TextStyle(
+                            fontSize = 16.sp,
+                            lineHeight = 24.sp,
+                            fontWeight = FontWeight(400),
+                            color = Variables.textIconographyDarkActive,
+                            textAlign = TextAlign.Center
+                        ),
+                        onClick = { navController.navigate(Route.Login) },
+                        modifier = Modifier
+
+                    )
+                }
+            }
         }
     }
-}}}
+}
 
 

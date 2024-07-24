@@ -14,10 +14,9 @@ object AppModules {
 
     @Singleton
     @Provides
-  fun provideHelloRepo(): HelloRepo {
+    fun provideHelloRepo(): HelloRepo {
         return HelloRepoImpl()
     }
-
 
 
 }
