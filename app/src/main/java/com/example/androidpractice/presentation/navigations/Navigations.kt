@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.androidpractice.presentation.screens.Mainpage
+import com.example.androidpractice.presentation.screens.mainpage.Mainpage
 import com.example.androidpractice.presentation.screens.login.Login
 import com.example.androidpractice.presentation.screens.signinpage.Signup
 import com.example.androidpractice.presentation.screens.welcomepage.Welcome

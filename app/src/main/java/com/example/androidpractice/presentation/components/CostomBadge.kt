@@ -25,7 +25,6 @@ import com.example.androidpractice.R
 @Composable
 fun CostomBadge(
     rating: Double = 4.8
-
 ) {
     Row(
         Modifier

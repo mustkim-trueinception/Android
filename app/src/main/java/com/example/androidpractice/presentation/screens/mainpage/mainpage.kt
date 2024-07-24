@@ -1,4 +1,4 @@
-package com.example.androidpractice.presentation.screens
+package com.example.androidpractice.presentation.screens.mainpage
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
@@ -10,10 +10,12 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
@@ -108,42 +110,48 @@ fun Mainpage() {
                                 )
                             },
                             trailingIcon = {
-                                Image(
-                                    modifier = Modifier
-                                        .padding(1.dp)
-                                        .width(25.dp)
-                                        .height(25.dp),
-                                    painter = painterResource(id = R.drawable.mic),
-                                    contentDescription = ""
-                                )
+                                IconButton(onClick = {}) {
+                                    Image(
+                                        modifier = Modifier
+                                            .padding(1.dp)
+                                            .width(25.dp)
+                                            .height(25.dp),
+                                        painter = painterResource(id = R.drawable.mic),
+                                        contentDescription = ""
+                                    )
+
+                                }
+
                             })
 
-                        Image(
-                            modifier = Modifier
-                                .shadow(
-                                    elevation = 6.dp,
-                                    spotColor = Color(0x1A101828),
-                                    ambientColor = Color(0x1A101828)
-                                )
-                                .shadow(
-                                    elevation = 4.dp,
-                                    spotColor = Color(0x1A101828),
-                                    ambientColor = Color(0x1A101828)
-                                )
-                                .border(
-                                    width = 1.dp,
-                                    color = Variables.CommonWhite,
-                                    shape = RoundedCornerShape(size = 999.dp)
-                                )
-                                .width(50.dp)
-                                .height(50.dp)
-                                .background(
-                                    color = Variables.primary300,
-                                    shape = RoundedCornerShape(size = 999.dp)
-                                ),
-                            painter = painterResource(id = R.drawable.topbarimg2),
-                            contentDescription = ""
-                        )
+                        IconButton(modifier = Modifier.size(50.dp), onClick = {}) {
+                            Image(
+                                modifier = Modifier
+                                    .shadow(
+                                        elevation = 6.dp,
+                                        spotColor = Color(0x1A101828),
+                                        ambientColor = Color(0x1A101828)
+                                    )
+                                    .shadow(
+                                        elevation = 4.dp,
+                                        spotColor = Color(0x1A101828),
+                                        ambientColor = Color(0x1A101828)
+                                    )
+                                    .border(
+                                        width = 1.dp,
+                                        color = Variables.CommonWhite,
+                                        shape = RoundedCornerShape(size = 999.dp)
+                                    )
+                                    .width(50.dp)
+                                    .height(50.dp)
+                                    .background(
+                                        color = Variables.primary300,
+                                        shape = RoundedCornerShape(size = 999.dp)
+                                    ),
+                                painter = painterResource(id = R.drawable.topbarimg2),
+                                contentDescription = ""
+                            )
+                        }
                     }
                 }
                 // Carousel Slider Image
@@ -313,14 +321,15 @@ fun Mainpage() {
                                             contentDescription = "image description"
                                         )
                                     },
-                                    badge = {CostomBadge(rating = 4.0)},
+                                    badge = { CostomBadge(rating = 4.0) },
                                     mrp = "₹ 6,400.00",
-                                    price = "5,950")
+                                    price = "5,950"
+                                )
 
 
                                 TopCategories(
                                     productname = "Arduino Nano RP2040",
-                                    badge = { CostomBadge(rating = 5.0)},
+                                    badge = { CostomBadge(rating = 5.0) },
                                     image = {
                                         Image(
                                             modifier = Modifier
@@ -342,8 +351,9 @@ fun Mainpage() {
                                             contentDescription = "image description"
                                         )
                                     },
-                                    badge = {CostomBadge(rating = 4.8)},
-                                    price = "5,440.00")
+                                    badge = { CostomBadge(rating = 4.8) },
+                                    price = "5,440.00"
+                                )
                             }
                         }
                     }
