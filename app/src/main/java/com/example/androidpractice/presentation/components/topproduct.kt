@@ -1,4 +1,4 @@
-package com.example.androidpractice.components
+package com.example.androidpractice.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

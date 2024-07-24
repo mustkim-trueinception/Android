@@ -1,13 +1,13 @@
-package com.example.androidpractice.navigations
+package com.example.androidpractice.presentation.navigations
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.androidpractice.screens.Login
-import com.example.androidpractice.screens.Mainpage
-import com.example.androidpractice.screens.Signup
-import com.example.androidpractice.screens.Welcome
+import com.example.androidpractice.presentation.screens.Mainpage
+import com.example.androidpractice.presentation.screens.login.Login
+import com.example.androidpractice.presentation.screens.signinpage.Signup
+import com.example.androidpractice.presentation.screens.welcomepage.Welcome
 import kotlinx.serialization.Serializable
 
 // Routes Are Define Here

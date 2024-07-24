@@ -1,4 +1,4 @@
-package com.example.androidpractice.components.bottomnavbar
+package com.example.androidpractice.presentation.components.bottomnavbar
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -16,8 +16,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.androidpractice.R
-import com.example.androidpractice.components.buttons.CostIconButton
-import com.example.androidpractice.components.Variables
+import com.example.androidpractice.presentation.components.buttons.CostIconButton
+import com.example.androidpractice.presentation.components.Variables
 
 @Composable
 fun Navbar(){

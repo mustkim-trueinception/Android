@@ -1,4 +1,4 @@
-package com.example.androidpractice.components
+package com.example.androidpractice.presentation.components
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp

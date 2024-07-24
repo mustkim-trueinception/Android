@@ -1,4 +1,4 @@
-package com.example.androidpractice.screens
+package com.example.androidpractice.presentation.screens
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
@@ -30,11 +30,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.androidpractice.R
-import com.example.androidpractice.components.CostCard
-import com.example.androidpractice.components.TopCategories
-import com.example.androidpractice.components.Variables
-import com.example.androidpractice.components.bottomnavbar.Navbar
-import com.example.androidpractice.components.carousel.Carousel
+import com.example.androidpractice.presentation.components.CostCard
+import com.example.androidpractice.presentation.components.TopCategories
+import com.example.androidpractice.presentation.components.Variables
+import com.example.androidpractice.presentation.components.bottomnavbar.Navbar
+import com.example.androidpractice.presentation.components.carousel.Carousel
 
 
 @SuppressLint("CoroutineCreationDuringComposition")

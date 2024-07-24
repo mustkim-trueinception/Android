@@ -1,4 +1,4 @@
-package com.example.androidpractice.components.buttons
+package com.example.androidpractice.presentation.components.buttons
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -13,16 +13,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.example.androidpractice.components.Variables
+import com.example.androidpractice.presentation.components.Variables
 
 @Composable
 fun CostIconButton(
-                    modifier: Modifier = Modifier,
-                    onClick: () -> Unit,
-                    enabled: Boolean = true,
-                    icon:@Composable (() -> Unit)? = null,
-                    shape: RoundedCornerShape = RoundedCornerShape(size = Variables.md),
-                    text:String = "")
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit,
+    enabled: Boolean = true,
+    icon:@Composable (() -> Unit)? = null,
+    shape: RoundedCornerShape = RoundedCornerShape(size = Variables.md),
+    text:String = "")
        {
         Surface(
             shape = shape,

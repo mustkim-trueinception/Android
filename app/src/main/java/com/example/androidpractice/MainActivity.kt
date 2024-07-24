@@ -8,9 +8,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.ui.Modifier
-import com.example.androidpractice.components.Variables
-import com.example.androidpractice.navigations.Navigation
+import com.example.androidpractice.presentation.components.Variables
+import com.example.androidpractice.presentation.navigations.Navigation
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

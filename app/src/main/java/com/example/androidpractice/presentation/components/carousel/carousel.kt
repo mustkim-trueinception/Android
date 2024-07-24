@@ -1,4 +1,4 @@
-package com.example.androidpractice.components.carousel
+package com.example.androidpractice.presentation.components.carousel
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -21,7 +21,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.androidpractice.R
-import com.example.androidpractice.components.Variables
+import com.example.androidpractice.presentation.components.Variables
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

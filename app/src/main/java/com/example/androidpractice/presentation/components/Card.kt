@@ -1,4 +1,4 @@
-package com.example.androidpractice.components
+package com.example.androidpractice.presentation.components
 
 import android.util.Log
 import androidx.compose.foundation.background

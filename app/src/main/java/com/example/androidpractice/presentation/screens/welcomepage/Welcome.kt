@@ -1,4 +1,4 @@
-package com.example.androidpractice.screens
+package com.example.androidpractice.presentation.screens.welcomepage
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -24,19 +24,22 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.example.androidpractice.navigations.Route
 import com.example.androidpractice.R
-import com.example.androidpractice.components.buttons.ReusableButton
-import com.example.androidpractice.components.Variables
+import com.example.androidpractice.presentation.components.Variables
+import com.example.androidpractice.presentation.components.buttons.ReusableButton
+import com.example.androidpractice.presentation.navigations.Route
 
 
 @Composable
-fun Welcome(navController: NavController) {
+fun Welcome(navController: NavController, welcomeViewModel: WelcomeViewModel = hiltViewModel()) {
+
     Scaffold(modifier = Modifier.fillMaxSize(),
     )
     { innerPadding ->
-        Surface (modifier = Modifier.padding(innerPadding)
+        Surface (modifier = Modifier
+            .padding(innerPadding)
             .background(color = Variables.CommonWhite))
         {
     Column(
@@ -52,7 +55,7 @@ fun Welcome(navController: NavController) {
             modifier = Modifier
                 .width(398.dp)
                 .height(40.dp),
-            text = "Hey, Hello 👋🏻 ",
+            text = "Hey, Hello \uD83D\uDC4B\uD83C\uDFFB ",
             style = TextStyle(
                 fontSize = 24.sp,
                 lineHeight = 32.sp,
@@ -166,3 +169,5 @@ fun Welcome(navController: NavController) {
         }
     }
 }}}
+
+
