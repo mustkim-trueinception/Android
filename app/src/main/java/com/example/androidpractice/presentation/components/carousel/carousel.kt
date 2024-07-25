@@ -20,25 +20,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.example.androidpractice.R
 import com.example.androidpractice.presentation.components.Variables
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-@Composable
-fun Carousel(){
-    val image = listOf(
-        R.drawable.topimg1,
-        R.drawable.topimg5,
-        R.drawable.topimg4,
-        R.drawable.topimg3,
-        R.drawable.topimg2,
-    )
-    Imageslide(image = image)
-}
 
 @Composable
-fun Imageslide(image:List<Int> )
+fun Carousel(image:List<Int> )
 {
     val pagecount = image.size
     val pagerState = rememberPagerState { pagecount }

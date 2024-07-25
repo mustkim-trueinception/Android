@@ -31,6 +31,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.androidpractice.R
 import com.example.androidpractice.presentation.components.CostCard
 import com.example.androidpractice.presentation.components.CostomBadge
@@ -38,11 +39,12 @@ import com.example.androidpractice.presentation.components.TopCategories
 import com.example.androidpractice.presentation.components.Variables
 import com.example.androidpractice.presentation.components.bottomnavbar.Navbar
 import com.example.androidpractice.presentation.components.carousel.Carousel
+import com.example.androidpractice.presentation.screens.welcomepage.WelcomeViewModel
 
 
 @SuppressLint("CoroutineCreationDuringComposition")
 @Composable
-fun Mainpage() {
+fun Mainpage(mainViewModel: mainViewModel = hiltViewModel()) {
     Scaffold(
         bottomBar = {
             NavigationBar(
@@ -156,7 +158,7 @@ fun Mainpage() {
                 }
                 // Carousel Slider Image
                 item {
-                    Carousel()
+                    Carousel(mainViewModel.Getimage())
                 }
                 // Top Categories lazy row
                 item {

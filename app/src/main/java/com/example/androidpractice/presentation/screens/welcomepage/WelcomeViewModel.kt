@@ -8,9 +8,12 @@ import javax.inject.Inject
 @HiltViewModel
 class WelcomeViewModel @Inject constructor(
     val helloRepo: HelloRepo
+
 ) : ViewModel() {
 
     fun gethellostring(): String {
         return helloRepo.sayHello()
     }
+
+
 }

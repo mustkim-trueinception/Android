@@ -34,206 +34,218 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.androidpractice.presentation.navigations.Route
 import com.example.androidpractice.R
-import com.example.androidpractice.presentation.components.buttons.ReusableButton
 import com.example.androidpractice.presentation.components.Variables
+import com.example.androidpractice.presentation.components.buttons.ReusableButton
+import com.example.androidpractice.presentation.navigations.Route
 
 
 @Composable
 fun Signup(navController: NavController) {
-    Scaffold(modifier = Modifier.fillMaxSize(),
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
     ) { innerPadding ->
 
-        Surface (modifier = Modifier.padding(innerPadding)
-            .background(color = Variables.bgColor)) {
-    // Main Content page
-    Column(
-        Modifier
-            .fillMaxWidth()
-            .fillMaxSize()
-            .padding(15.dp), verticalArrangement = Arrangement.SpaceBetween,
-        horizontalAlignment = Alignment.CenterHorizontally
-    )
-    {
-        Column(
-            Modifier
-                .fillMaxWidth(),
-            verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.Top),
-            horizontalAlignment = Alignment.Start,
+        Surface(
+            modifier = Modifier
+                .padding(innerPadding)
+                .background(color = Variables.bgColor)
         ) {
-            Text(
-                text = "Create Account",
-                Modifier
-                    .fillMaxWidth()
-                    .height(32.dp),
-                style = TextStyle(
-                    fontSize = 24.sp,
-                    lineHeight = 32.sp,
-                    fontWeight = FontWeight(700),
-                    color = Variables.textInactive,
-                )
-            )
+            // Main Content page
             Column(
                 Modifier
-                    .fillMaxWidth(),
-                verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
-                horizontalAlignment = Alignment.Start,
-            ) {
-                Row {
-                    Text(
-                        text = "Full Name",
-                        fontFamily = FontFamily.SansSerif,
-                        fontSize = 14.sp,
-                        fontStyle = FontStyle.Normal,
-                        fontWeight = FontWeight.Medium
-                    )
-                    Text(text = "*", color = Color.Red)
-                }
-                OutlinedTextField(modifier = Modifier
                     .fillMaxWidth()
-                    .background(
-                        color = Variables.CommonWhite,
-                        shape = RoundedCornerShape(size = 6.dp)
-                    ),
-                    value = "",
-                    onValueChange = {},
-                    placeholder = {
-                        Text(text = "john Doe")
-                    },
-                    leadingIcon = {
-                        Icon(
-                            imageVector = Icons.Default.AccountCircle,
-                            contentDescription = "AccountIcon"
+                    .fillMaxSize()
+                    .padding(15.dp), verticalArrangement = Arrangement.SpaceBetween,
+                horizontalAlignment = Alignment.CenterHorizontally
+            )
+            {
+                Column(
+                    Modifier
+                        .fillMaxWidth(),
+                    verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.Top),
+                    horizontalAlignment = Alignment.Start,
+                ) {
+                    Text(
+                        text = "Create Account",
+                        Modifier
+                            .fillMaxWidth()
+                            .height(32.dp),
+                        style = TextStyle(
+                            fontSize = 24.sp,
+                            lineHeight = 32.sp,
+                            fontWeight = FontWeight(700),
+                            color = Variables.textInactive,
+                        )
+                    )
+                    Column(
+                        Modifier
+                            .fillMaxWidth(),
+                        verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
+                        horizontalAlignment = Alignment.Start,
+                    ) {
+                        Row {
+                            Text(
+                                text = "Full Name",
+                                fontFamily = FontFamily.SansSerif,
+                                fontSize = 14.sp,
+                                fontStyle = FontStyle.Normal,
+                                fontWeight = FontWeight.Medium
+                            )
+                            Text(text = "*", color = Color.Red)
+                        }
+                        OutlinedTextField(modifier = Modifier
+                            .fillMaxWidth()
+                            .background(
+                                color = Variables.CommonWhite,
+                                shape = RoundedCornerShape(size = 6.dp)
+                            ),
+                            value = "",
+                            onValueChange = {},
+                            placeholder = {
+                                Text(text = "john Doe")
+                            },
+                            leadingIcon = {
+                                Icon(
+                                    imageVector = Icons.Default.AccountCircle,
+                                    contentDescription = "AccountIcon"
+                                )
+                            }
+
                         )
                     }
-
-                )
-            }
-            Column(
-                Modifier
-                    .fillMaxWidth(),
-                verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
-                horizontalAlignment = Alignment.Start,
-            ) {
-                Row {
-                    Text(
-                        text = "Email ",
-                        fontFamily = FontFamily.SansSerif,
-                        fontSize = 14.sp,
-                        fontStyle = FontStyle.Normal,
-                        fontWeight = FontWeight.Medium
-                    )
-                    Text(text = "*", color = Color.Red)
-                }
-                OutlinedTextField(modifier = Modifier
-                    .fillMaxWidth()
-                    .background(
-                        color = Variables.CommonWhite,
-                        shape = RoundedCornerShape(size = 6.dp)
-                    ),
-                    value = "",
-                    onValueChange = {},
-                    placeholder = {
-                        Text(text = "john@example.com")
-                    },
-                    leadingIcon = {
-                        Icon(imageVector = Icons.Default.Email, contentDescription = "EmailIcon")
+                    Column(
+                        Modifier
+                            .fillMaxWidth(),
+                        verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
+                        horizontalAlignment = Alignment.Start,
+                    ) {
+                        Row {
+                            Text(
+                                text = "Email ",
+                                fontFamily = FontFamily.SansSerif,
+                                fontSize = 14.sp,
+                                fontStyle = FontStyle.Normal,
+                                fontWeight = FontWeight.Medium
+                            )
+                            Text(text = "*", color = Color.Red)
+                        }
+                        OutlinedTextField(modifier = Modifier
+                            .fillMaxWidth()
+                            .background(
+                                color = Variables.CommonWhite,
+                                shape = RoundedCornerShape(size = 6.dp)
+                            ),
+                            value = "",
+                            onValueChange = {},
+                            placeholder = {
+                                Text(text = "john@example.com")
+                            },
+                            leadingIcon = {
+                                Icon(
+                                    imageVector = Icons.Default.Email,
+                                    contentDescription = "EmailIcon"
+                                )
+                            }
+                        )
                     }
-                )
-            }
-            Column(
-                Modifier
-                    .fillMaxWidth(),
-                verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
-                horizontalAlignment = Alignment.Start,
-            ) {
-                Row {
-                    Text(
-                        text = "Password",
-                        fontFamily = FontFamily.SansSerif,
-                        fontSize = 14.sp,
-                        fontStyle = FontStyle.Normal,
-                        fontWeight = FontWeight.Medium
-                    )
-                    Text(text = "*", color = Color.Red)
-                }
-                OutlinedTextField(
-                    modifier = Modifier.background( color = Variables.CommonWhite,
-                        shape = RoundedCornerShape(size = 6.dp))
-                    .fillMaxWidth(),
-                    value = "",
-                    onValueChange = {},
-                    placeholder = {
-                        Text(text = "****")
-                    },
-                    leadingIcon = {
-                        Image(
+                    Column(
+                        Modifier
+                            .fillMaxWidth(),
+                        verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
+                        horizontalAlignment = Alignment.Start,
+                    ) {
+                        Row {
+                            Text(
+                                text = "Password",
+                                fontFamily = FontFamily.SansSerif,
+                                fontSize = 14.sp,
+                                fontStyle = FontStyle.Normal,
+                                fontWeight = FontWeight.Medium
+                            )
+                            Text(text = "*", color = Color.Red)
+                        }
+                        OutlinedTextField(
                             modifier = Modifier
-                                .width(24.dp)
-                                .height(24.dp),
-                            painter = painterResource(id = R.drawable.key),
-                            contentDescription = "Icon"
+                                .background(
+                                    color = Variables.CommonWhite,
+                                    shape = RoundedCornerShape(size = 6.dp)
+                                )
+                                .fillMaxWidth(),
+                            value = "",
+                            onValueChange = {},
+                            placeholder = {
+                                Text(text = "****")
+                            },
+                            leadingIcon = {
+                                Image(
+                                    modifier = Modifier
+                                        .width(24.dp)
+                                        .height(24.dp),
+                                    painter = painterResource(id = R.drawable.key),
+                                    contentDescription = "Icon"
+                                )
+                            }
+
                         )
                     }
+                }
 
-                )
-            }
-        }
 // Bottom Button functionality
-        Column(
-            Modifier
-                .fillMaxWidth()
-                .padding(
-                    start = Variables.xSm,
-                    end = Variables.xSm
-                ),
-            verticalArrangement = Arrangement.spacedBy(32.dp, Alignment.Top),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            ReusableButton(
-                endIcon = {
-                    Icon(
-                        modifier = Modifier
-                            .padding(1.dp)
-                            .width(20.dp)
-                            .height(20.dp),
-                        painter = painterResource(id = R.drawable.right),
-                        tint = Color.White,
-                        contentDescription = ""
-                    )
-                },
-                colors = ButtonDefaults.buttonColors(Variables.primary500),
-                text = "SIGN UP",
-                textStyle = TextStyle(
-                    fontSize = 16.sp,
-                    lineHeight = 24.sp,
-                    fontWeight = FontWeight(400),
-                    color = Color.White,
-                    textAlign = TextAlign.Center
-                ),
-                onClick = {navController.navigate(Route.Home)},
-                modifier = Modifier
-            )
-            // bottom row
-            Row(
-                Modifier
-                    .height(24.dp),
-                horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.Start),
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Text(text = "New here? Create an account.")
-                Text(
-                    modifier = Modifier
-                        .clickable {
-                            navController.navigate(Route.Login)
+                Column(
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(
+                            start = Variables.xSm,
+                            end = Variables.xSm
+                        ),
+                    verticalArrangement = Arrangement.spacedBy(32.dp, Alignment.Top),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                ) {
+                    ReusableButton(
+                        endIcon = {
+                            Icon(
+                                modifier = Modifier
+                                    .padding(1.dp)
+                                    .width(20.dp)
+                                    .height(20.dp),
+                                painter = painterResource(id = R.drawable.right),
+                                tint = Color.White,
+                                contentDescription = ""
+                            )
                         },
-                    color = Color.Blue,
-                    text = "Log in",
-                    textAlign = TextAlign.Center
-                )
+                        colors = ButtonDefaults.buttonColors(Variables.primary500),
+                        text = "SIGN UP",
+                        textStyle = TextStyle(
+                            fontSize = 16.sp,
+                            lineHeight = 24.sp,
+                            fontWeight = FontWeight(400),
+                            color = Color.White,
+                            textAlign = TextAlign.Center
+                        ),
+                        onClick = { navController.navigate(Route.Home) },
+                        modifier = Modifier
+                    )
+                    // bottom row
+                    Row(
+                        Modifier
+                            .height(24.dp),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.Start),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Text(text = "New here? Create an account.")
+                        Text(
+                            modifier = Modifier
+                                .clickable {
+                                    navController.navigate(Route.Login)
+                                },
+                            color = Color.Blue,
+                            text = "Log in",
+                            textAlign = TextAlign.Center
+                        )
+                    }
+                }
             }
         }
     }
-}}
-    }
+}
