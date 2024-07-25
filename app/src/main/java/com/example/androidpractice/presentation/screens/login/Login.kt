@@ -1,4 +1,4 @@
-package com.example.androidpractice.Screens
+package com.example.androidpractice.presentation.screens.login
 
 
 import androidx.compose.foundation.Image
@@ -38,24 +38,20 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.androidpractice.Navigations.Route
+import com.example.androidpractice.presentation.navigations.Route
 import com.example.androidpractice.R
-import com.example.androidpractice.components.Buttons.ReusableButton
-import com.example.androidpractice.components.Variables
+import com.example.androidpractice.presentation.components.buttons.ReusableButton
+import com.example.androidpractice.presentation.components.Variables
 
 
 @Composable
 fun Login(navController: NavController) {
-
     Scaffold(modifier = Modifier.fillMaxSize(),
     ) { innerPadding ->
         Surface (modifier = Modifier.padding(innerPadding)
-            .background(color = Variables.bgColor)) {
-
-
-
+            .background(color = Variables.bgColor))
+        {
         // This is check box verialble
-
     var checked by remember { mutableStateOf(true) }
 
     Column(
@@ -71,7 +67,6 @@ fun Login(navController: NavController) {
             horizontalAlignment = Alignment.Start,
             modifier = Modifier
                 .fillMaxWidth()
-
         ) {
             Text(
                 text = "Hey, Hello 👋🏻 ",
@@ -92,7 +87,6 @@ fun Login(navController: NavController) {
                 horizontalAlignment = Alignment.Start,
                 modifier = Modifier
                     .fillMaxWidth()
-
             ) {
                 Row(
                     horizontalArrangement = Arrangement.spacedBy(4.dp, Alignment.Start),
@@ -136,7 +130,6 @@ fun Login(navController: NavController) {
                     }
                 )
             }
-
             // PassWord filling
             Column(
                 verticalArrangement = Arrangement.spacedBy(8.dp, Alignment.Top),
@@ -214,7 +207,6 @@ fun Login(navController: NavController) {
                 Text(text = "Remember Me")
             }
         }
-
         // Bottom Login Button
         Column(
             Modifier
@@ -226,9 +218,7 @@ fun Login(navController: NavController) {
             verticalArrangement = Arrangement.spacedBy(32.dp, Alignment.Top),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-
             ReusableButton(
-
                 endIcon = {
                     Icon(
                         modifier = Modifier
@@ -251,18 +241,15 @@ fun Login(navController: NavController) {
                 ),
                 onClick = {navController.navigate(Route.Home)},
                 modifier = Modifier
-
             )
-// bottom row
+            // bottom row
             Row(
                 Modifier
                     .height(24.dp),
                 horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.Start),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-
                 Text(text = "New here? Create an account.")
-
                 Text(
                     modifier = Modifier
                         .clickable { navController.navigate(Route.Signup) },
@@ -275,5 +262,4 @@ fun Login(navController: NavController) {
         }
     }
 
-}
-    }}
+}}}
