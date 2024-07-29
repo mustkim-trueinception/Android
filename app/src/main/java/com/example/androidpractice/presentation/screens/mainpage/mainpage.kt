@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.NavigationBar
@@ -216,61 +217,69 @@ fun Mainpage(mainViewModel: MainViewModel = hiltViewModel()) {
                             modifier = Modifier.height(146.dp)
                         )
                         {
-                            item {
-                                CostCard(
-                                    image = {
-                                        Image(
-                                            painter = painterResource(id = R.drawable.elip),
-                                            contentDescription = ""
-                                        )
-                                    }, text = "3D Printing"
-                                )
-                                CostCard(
-                                    image = {
-                                        Image(
-                                            painter = painterResource(id = R.drawable.elip2),
-                                            contentDescription = ""
-                                        )
-                                    }, text = "Development Boards"
-                                )
-                                CostCard(
-                                    image = {
-                                        Image(
-                                            painter = painterResource(id = R.drawable.elip3),
-                                            contentDescription = ""
-                                        )
-                                    }, text = "Raspberry Pi"
-                                )
+                            items(mainViewModel.getcategory()) { Categoryitem ->
 
-                                CostCard(
-                                    image = {
-                                        Image(
-                                            painter = painterResource(id = R.drawable.categeries4),
-                                            contentDescription = ""
-                                        )
-                                    }, text = "Wires & Cables"
-                                )
+                                CostCard(img = Categoryitem.image, text = Categoryitem.description)
 
-                                CostCard(
 
-                                    image = {
-                                        Image(
-                                            painter = painterResource(id = R.drawable.elip2),
-                                            contentDescription = ""
-                                        )
-                                    }, text = "Development Boards"
-                                )
-
-                                CostCard(
-                                    image = {
-                                        Image(
-                                            painter = painterResource(id = R.drawable.elip3),
-                                            contentDescription = ""
-                                        )
-                                    }, text = "Raspberry Pi"
-                                )
 
                             }
+
+//                            item {
+//                                CostCard(
+//                                    image = {
+//                                        Image(
+//                                            painter = painterResource(id = R.drawable.elip),
+//                                            contentDescription = ""
+//                                        )
+//                                    }, text = "3D Printing"
+//                                )
+//                                CostCard(
+//                                    image = {
+//                                        Image(
+//                                            painter = painterResource(id = R.drawable.elip2),
+//                                            contentDescription = ""
+//                                        )
+//                                    }, text = "Development Boards"
+//                                )
+//                                CostCard(
+//                                    image = {
+//                                        Image(
+//                                            painter = painterResource(id = R.drawable.elip3),
+//                                            contentDescription = ""
+//                                        )
+//                                    }, text = "Raspberry Pi"
+//                                )
+//
+//                                CostCard(
+//                                    image = {
+//                                        Image(
+//                                            painter = painterResource(id = R.drawable.categeries4),
+//                                            contentDescription = ""
+//                                        )
+//                                    }, text = "Wires & Cables"
+//                                )
+//
+//                                CostCard(
+//
+//                                    image = {
+//                                        Image(
+//                                            painter = painterResource(id = R.drawable.elip2),
+//                                            contentDescription = ""
+//                                        )
+//                                    }, text = "Development Boards"
+//                                )
+//
+//                                CostCard(
+//                                    image = {
+//                                        Image(
+//                                            painter = painterResource(id = R.drawable.elip3),
+//                                            contentDescription = ""
+//                                        )
+//                                    }, text = "Raspberry Pi"
+//                                )
+//
+//                            }
                         }
                     }
                 }
