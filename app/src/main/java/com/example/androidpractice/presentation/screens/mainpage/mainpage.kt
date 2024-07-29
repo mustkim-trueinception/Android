@@ -39,12 +39,11 @@ import com.example.androidpractice.presentation.components.TopCategories
 import com.example.androidpractice.presentation.components.Variables
 import com.example.androidpractice.presentation.components.bottomnavbar.Navbar
 import com.example.androidpractice.presentation.components.carousel.Carousel
-import com.example.androidpractice.presentation.screens.welcomepage.WelcomeViewModel
 
 
 @SuppressLint("CoroutineCreationDuringComposition")
 @Composable
-fun Mainpage(mainViewModel: mainViewModel = hiltViewModel()) {
+fun Mainpage(mainViewModel: MainViewModel = hiltViewModel()) {
     Scaffold(
         bottomBar = {
             NavigationBar(
@@ -75,19 +74,20 @@ fun Mainpage(mainViewModel: mainViewModel = hiltViewModel()) {
                         modifier = Modifier
                             .fillMaxWidth(),
                         horizontalArrangement = Arrangement.spacedBy(
-                            8.dp,
-                            Alignment.Start
+                            12.dp,
+                            alignment = Alignment.CenterHorizontally
                         ),
                         verticalAlignment = Alignment.CenterVertically,
                     )
                     {
+
                         OutlinedTextField(modifier = Modifier
                             .shadow(
                                 elevation = 0.dp,
                                 spotColor = Color(0xFFE0E0E0),
                                 ambientColor = Color(0xFFE0E0E0)
                             )
-                            .width(316.dp)
+                            .weight(1f)
                             .background(
                                 color = Variables.Grey50,
                                 shape = RoundedCornerShape(size = 999.dp)
@@ -158,7 +158,7 @@ fun Mainpage(mainViewModel: mainViewModel = hiltViewModel()) {
                 }
                 // Carousel Slider Image
                 item {
-                    Carousel(mainViewModel.Getimage())
+                    Carousel(mainViewModel.getimage())
                 }
                 // Top Categories lazy row
                 item {

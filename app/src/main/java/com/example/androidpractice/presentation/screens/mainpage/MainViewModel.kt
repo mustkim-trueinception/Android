@@ -6,11 +6,11 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class mainViewModel @Inject constructor(
-    val Imageslist: Imageslist
+class MainViewModel @Inject constructor(
+    private val imageslist: Imageslist
 ) : ViewModel() {
 
-    fun Getimage(): List<Int> {
-        return Imageslist.getimages()
+    fun getimage(): List<Int> {
+        return imageslist.getimages()
     }
 }
