@@ -6,6 +6,8 @@ import com.example.androidpractice.core.data.repositories.HelloRepo
 import com.example.androidpractice.core.data.repositories.HelloRepoImpl
 import com.example.androidpractice.core.data.repositories.Imageslist
 import com.example.androidpractice.core.data.repositories.ImageslistImpl
+import com.example.androidpractice.core.data.repositories.ProductInterfaceImpl
+import com.example.androidpractice.core.data.repositories.TopProductInterface
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -31,6 +33,12 @@ object AppModules {
     @Provides
     fun providescategory(): Category {
         return CategoryImpl()
+    }
+
+    @Singleton
+    @Provides
+    fun ProvidesProduct(): TopProductInterface {
+        return ProductInterfaceImpl()
     }
 
 

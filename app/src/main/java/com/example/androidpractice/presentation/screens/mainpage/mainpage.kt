@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -23,6 +24,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -37,7 +39,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.androidpractice.R
 import com.example.androidpractice.presentation.components.CostCard
 import com.example.androidpractice.presentation.components.CostomBadge
-import com.example.androidpractice.presentation.components.TopCategories
+import com.example.androidpractice.presentation.components.TopProducts
 import com.example.androidpractice.presentation.components.Variables
 import com.example.androidpractice.presentation.components.bottomnavbar.Navbar
 import com.example.androidpractice.presentation.components.carousel.Carousel
@@ -48,6 +50,10 @@ import com.example.androidpractice.presentation.components.carousel.Carousel
 fun Mainpage(mainViewModel: MainViewModel = hiltViewModel()) {
 
     val collect = mainViewModel.topcat.collectAsState().value
+
+    LaunchedEffect(key1 = Unit) {
+        mainViewModel.getTopCategories()
+    }
 
     Scaffold(
         bottomBar = {
@@ -221,9 +227,42 @@ fun Mainpage(mainViewModel: MainViewModel = hiltViewModel()) {
                             modifier = Modifier.height(146.dp)
                         )
                         {
-                            items(collect) { Cat ->
+                            when (collect) {
+                                is TopCategoriesUiState.Success -> {
 
-                                CostCard(img = Cat.image, text = Cat.description)
+                                    items(collect.data) { item ->
+                                        CostCard(img = item.image, text = item.description)
+                                    }
+                                }
+
+                                is TopCategoriesUiState.Idle -> {
+                                    item {
+                                        Box {
+                                            Text(text = "idle")
+                                        }
+                                    }
+                                }
+
+                                is TopCategoriesUiState.Loading -> {
+
+                                    item {
+                                        Box {
+                                            Text(text = "loading")
+                                        }
+                                    }
+
+                                }
+
+                                is TopCategoriesUiState.Error -> {
+
+                                    item {
+                                        Box {
+                                            Text(text = "error")
+                                        }
+                                    }
+
+                                }
+
                             }
 
                         }
@@ -267,7 +306,7 @@ fun Mainpage(mainViewModel: MainViewModel = hiltViewModel()) {
                             Modifier
                         ) {
                             item {
-                                TopCategories(
+                                TopProducts(
                                     productname = "Raspberry PI 4 Model B With 4GB RAM",
                                     image = {
                                         Image(
@@ -284,7 +323,7 @@ fun Mainpage(mainViewModel: MainViewModel = hiltViewModel()) {
                                 )
 
 
-                                TopCategories(
+                                TopProducts(
                                     productname = "Arduino Nano RP2040",
                                     badge = { CostomBadge(rating = 5.0) },
                                     image = {
@@ -297,7 +336,7 @@ fun Mainpage(mainViewModel: MainViewModel = hiltViewModel()) {
                                         )
                                     })
 
-                                TopCategories(
+                                TopProducts(
                                     productname = "3D Printer Extruder 0.5mm nozzle",
                                     image = {
                                         Image(

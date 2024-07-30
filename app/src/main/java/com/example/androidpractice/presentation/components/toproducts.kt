@@ -14,35 +14,33 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.androidpractice.R
 
 
 @Composable
-fun TopProduct(
+fun TopProducts(
     modifier: Modifier = Modifier,
     heading: String = "Development Boards",
-    img: DynamicImageSource = DynamicImageSource.Local(R.drawable.image_product3),
     image: @Composable (() -> Unit)? = null,
     productname: String = "Arduino Nano RP2040",
     deliverycharges: String = "free delivery",
-    price: String  ? =null,
-    mrp: String ? = null,
+    price: String? = null,
+    mrp: String? = null,
     badge: @Composable (() -> Unit)? = null,
-    reviews:String = "1563 reviews",
+    reviews: String = "1563 reviews",
 ) {
-    Column(modifier =
-    modifier
-        .clip(shape = RoundedCornerShape(8.dp))
-        .width(224.dp)
-        .padding(start = 12.dp, end = 12.dp, bottom = 8.dp)
-        .clickable { },
+    Column(
+        modifier =
+        modifier
+            .clip(shape = RoundedCornerShape(8.dp))
+            .width(224.dp)
+            .padding(start = 12.dp, end = 12.dp, bottom = 8.dp)
+            .clickable { },
         verticalArrangement = Arrangement.spacedBy(
             12.dp,
             Alignment.Top
@@ -59,19 +57,9 @@ fun TopProduct(
                 color = Variables.textInactive,
             )
         )
-        if (image != null) {
-            image()
-        }
-        DynamicImage(
-            imageSource = img,
-            customization = ImageCustomization(
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .width(180.dp)
-                    .height(160.dp),
-            ),
-        )
-
+//        if (image != null) {
+//            image()
+//        }
         Text(
             text = productname,
             style = TextStyle(
@@ -106,6 +94,7 @@ fun TopProduct(
             Text(
                 text = reviews,
 
+                // P2/Special/Italic
                 style = TextStyle(
                     fontSize = 12.sp,
                     lineHeight = 16.sp,
@@ -142,8 +131,8 @@ fun TopProduct(
                         color = Variables.Green500,
                     )
                 )
-            }}
-        else{
+            }
+        } else {
             Row(
                 Modifier
                     .width(82.dp)
@@ -170,6 +159,6 @@ fun TopProduct(
                     )
                 )
             }
-    }
+        }
     }
 }
