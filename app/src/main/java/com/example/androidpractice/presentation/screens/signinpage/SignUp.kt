@@ -182,7 +182,7 @@ fun Signup(navController: NavController) {
                                     modifier = Modifier
                                         .width(24.dp)
                                         .height(24.dp),
-                                    painter = painterResource(id = R.drawable.key),
+                                    painter = painterResource(id = R.drawable.ic_key),
                                     contentDescription = "Icon"
                                 )
                             }
@@ -209,7 +209,7 @@ fun Signup(navController: NavController) {
                                     .padding(1.dp)
                                     .width(20.dp)
                                     .height(20.dp),
-                                painter = painterResource(id = R.drawable.right),
+                                painter = painterResource(id = R.drawable.ic_right),
                                 tint = Color.White,
                                 contentDescription = ""
                             )

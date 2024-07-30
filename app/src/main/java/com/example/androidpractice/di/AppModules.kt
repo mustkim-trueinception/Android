@@ -1,5 +1,7 @@
 package com.example.androidpractice.di
 
+import com.example.androidpractice.core.data.repositories.Category
+import com.example.androidpractice.core.data.repositories.CategoryImpl
 import com.example.androidpractice.core.data.repositories.HelloRepo
 import com.example.androidpractice.core.data.repositories.HelloRepoImpl
 import com.example.androidpractice.core.data.repositories.Imageslist
@@ -24,6 +26,13 @@ object AppModules {
     fun provideImageslist(): Imageslist {
         return ImageslistImpl()
     }
+
+    @Singleton
+    @Provides
+    fun providescategory(): Category {
+        return CategoryImpl()
+    }
+
 
 
 }

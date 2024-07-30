@@ -16,8 +16,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.androidpractice.R
-import com.example.androidpractice.presentation.components.buttons.CostIconButton
 import com.example.androidpractice.presentation.components.Variables
+import com.example.androidpractice.presentation.components.buttons.CostIconButton
 
 @Composable
 fun Navbar(){
@@ -41,7 +41,7 @@ fun Navbar(){
                         .padding(1.dp)
                         .width(30.dp)
                         .height(30.dp),
-                    painter = painterResource(id = R.drawable.home),
+                    painter = painterResource(id = R.drawable.ic_home),
                     contentDescription = ""
                 )
             })
@@ -56,7 +56,7 @@ fun Navbar(){
                         .padding(1.dp)
                         .width(30.dp)
                         .height(30.dp),
-                    painter = painterResource(id = R.drawable.offer),
+                    painter = painterResource(id = R.drawable.ic_offer),
                     contentDescription = ""
                 )
             })
@@ -70,7 +70,7 @@ fun Navbar(){
                         .padding(1.dp)
                         .width(30.dp)
                         .height(30.dp),
-                    painter = painterResource(id = R.drawable.category),
+                    painter = painterResource(id = R.drawable.ic_category),
                     contentDescription = ""
                 )
             })
@@ -84,7 +84,7 @@ fun Navbar(){
                         .padding(1.dp)
                         .width(30.dp)
                         .height(30.dp),
-                    painter = painterResource(id = R.drawable.phone),
+                    painter = painterResource(id = R.drawable.ic_phone),
                     contentDescription = ""
                 )
             })
@@ -98,7 +98,7 @@ fun Navbar(){
                         .padding(1.dp)
                         .width(30.dp)
                         .height(30.dp),
-                    painter = painterResource(id = R.drawable.profile),
+                    painter = painterResource(id = R.drawable.ic_profile),
                     contentDescription = ""
                 )
     })

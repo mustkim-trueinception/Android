@@ -5,11 +5,12 @@ import com.example.androidpractice.R
 class ImageslistImpl : Imageslist {
     override fun getimages(): List<Int> {
         return listOf(
-            R.drawable.topimg1,
-            R.drawable.topimg2,
-            R.drawable.topimg3,
-            R.drawable.topimg4,
-            R.drawable.topimg5
+            R.drawable.image_banner1,
+            R.drawable.image_banner2,
+            R.drawable.image_banner3,
+            R.drawable.image_banner4,
+            R.drawable.image_banner5,
+
         )
     }
 }

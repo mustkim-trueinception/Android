@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.NavigationBar
@@ -22,6 +23,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
@@ -39,12 +41,14 @@ import com.example.androidpractice.presentation.components.TopCategories
 import com.example.androidpractice.presentation.components.Variables
 import com.example.androidpractice.presentation.components.bottomnavbar.Navbar
 import com.example.androidpractice.presentation.components.carousel.Carousel
-import com.example.androidpractice.presentation.screens.welcomepage.WelcomeViewModel
 
 
 @SuppressLint("CoroutineCreationDuringComposition")
 @Composable
-fun Mainpage(mainViewModel: mainViewModel = hiltViewModel()) {
+fun Mainpage(mainViewModel: MainViewModel = hiltViewModel()) {
+
+    val collect = mainViewModel.topcat.collectAsState().value
+
     Scaffold(
         bottomBar = {
             NavigationBar(
@@ -75,19 +79,20 @@ fun Mainpage(mainViewModel: mainViewModel = hiltViewModel()) {
                         modifier = Modifier
                             .fillMaxWidth(),
                         horizontalArrangement = Arrangement.spacedBy(
-                            8.dp,
-                            Alignment.Start
+                            12.dp,
+                            alignment = Alignment.CenterHorizontally
                         ),
                         verticalAlignment = Alignment.CenterVertically,
                     )
                     {
+
                         OutlinedTextField(modifier = Modifier
                             .shadow(
                                 elevation = 0.dp,
                                 spotColor = Color(0xFFE0E0E0),
                                 ambientColor = Color(0xFFE0E0E0)
                             )
-                            .width(316.dp)
+                            .weight(1f)
                             .background(
                                 color = Variables.Grey50,
                                 shape = RoundedCornerShape(size = 999.dp)
@@ -107,7 +112,7 @@ fun Mainpage(mainViewModel: mainViewModel = hiltViewModel()) {
                                             end = 0.99969.dp,
                                             bottom = 1.09485.dp
                                         ),
-                                    painter = painterResource(id = R.drawable.topimg),
+                                    painter = painterResource(id = R.drawable.image_top),
                                     contentDescription = ""
                                 )
                             },
@@ -118,7 +123,7 @@ fun Mainpage(mainViewModel: mainViewModel = hiltViewModel()) {
                                             .padding(1.dp)
                                             .width(25.dp)
                                             .height(25.dp),
-                                        painter = painterResource(id = R.drawable.mic),
+                                        painter = painterResource(id = R.drawable.ic_mic),
                                         contentDescription = ""
                                     )
 
@@ -150,7 +155,7 @@ fun Mainpage(mainViewModel: mainViewModel = hiltViewModel()) {
                                         color = Variables.primary300,
                                         shape = RoundedCornerShape(size = 999.dp)
                                     ),
-                                painter = painterResource(id = R.drawable.topbarimg2),
+                                painter = painterResource(id = R.drawable.image_avtar),
                                 contentDescription = ""
                             )
                         }
@@ -158,7 +163,7 @@ fun Mainpage(mainViewModel: mainViewModel = hiltViewModel()) {
                 }
                 // Carousel Slider Image
                 item {
-                    Carousel(mainViewModel.Getimage())
+                    Carousel(mainViewModel.getimage())
                 }
                 // Top Categories lazy row
                 item {
@@ -216,61 +221,11 @@ fun Mainpage(mainViewModel: mainViewModel = hiltViewModel()) {
                             modifier = Modifier.height(146.dp)
                         )
                         {
-                            item {
-                                CostCard(
-                                    image = {
-                                        Image(
-                                            painter = painterResource(id = R.drawable.elip),
-                                            contentDescription = ""
-                                        )
-                                    }, text = "3D Printing"
-                                )
-                                CostCard(
-                                    image = {
-                                        Image(
-                                            painter = painterResource(id = R.drawable.elip2),
-                                            contentDescription = ""
-                                        )
-                                    }, text = "Development Boards"
-                                )
-                                CostCard(
-                                    image = {
-                                        Image(
-                                            painter = painterResource(id = R.drawable.elip3),
-                                            contentDescription = ""
-                                        )
-                                    }, text = "Raspberry Pi"
-                                )
+                            items(collect) { Cat ->
 
-                                CostCard(
-                                    image = {
-                                        Image(
-                                            painter = painterResource(id = R.drawable.categeries4),
-                                            contentDescription = ""
-                                        )
-                                    }, text = "Wires & Cables"
-                                )
-
-                                CostCard(
-
-                                    image = {
-                                        Image(
-                                            painter = painterResource(id = R.drawable.elip2),
-                                            contentDescription = ""
-                                        )
-                                    }, text = "Development Boards"
-                                )
-
-                                CostCard(
-                                    image = {
-                                        Image(
-                                            painter = painterResource(id = R.drawable.elip3),
-                                            contentDescription = ""
-                                        )
-                                    }, text = "Raspberry Pi"
-                                )
-
+                                CostCard(img = Cat.image, text = Cat.description)
                             }
+
                         }
                     }
                 }
@@ -319,7 +274,7 @@ fun Mainpage(mainViewModel: mainViewModel = hiltViewModel()) {
                                             modifier = Modifier
                                                 .width(180.dp)
                                                 .height(160.dp),
-                                            painter = painterResource(id = R.drawable.raspnew),
+                                            painter = painterResource(id = R.drawable.image_product3),
                                             contentDescription = "image description"
                                         )
                                     },
@@ -337,7 +292,7 @@ fun Mainpage(mainViewModel: mainViewModel = hiltViewModel()) {
                                             modifier = Modifier
                                                 .width(180.dp)
                                                 .height(160.dp),
-                                            painter = painterResource(id = R.drawable.stack),
+                                            painter = painterResource(id = R.drawable.image_product4),
                                             contentDescription = "image description"
                                         )
                                     })
@@ -349,7 +304,7 @@ fun Mainpage(mainViewModel: mainViewModel = hiltViewModel()) {
                                             modifier = Modifier
                                                 .width(180.dp)
                                                 .height(160.dp),
-                                            painter = painterResource(id = R.drawable.product3),
+                                            painter = painterResource(id = R.drawable.image_product1),
                                             contentDescription = "image description"
                                         )
                                     },

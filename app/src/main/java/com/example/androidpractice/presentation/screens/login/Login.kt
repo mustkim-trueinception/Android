@@ -38,18 +38,21 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.androidpractice.presentation.navigations.Route
 import com.example.androidpractice.R
-import com.example.androidpractice.presentation.components.buttons.ReusableButton
 import com.example.androidpractice.presentation.components.Variables
+import com.example.androidpractice.presentation.components.buttons.ReusableButton
+import com.example.androidpractice.presentation.navigations.Route
 
 
 @Composable
 fun Login(navController: NavController) {
     Scaffold(modifier = Modifier.fillMaxSize(),
     ) { innerPadding ->
-        Surface (modifier = Modifier.padding(innerPadding)
-            .background(color = Variables.bgColor))
+        Surface(
+            modifier = Modifier
+                .padding(innerPadding)
+                .background(color = Variables.bgColor)
+        )
         {
         // This is check box verialble
     var checked by remember { mutableStateOf(true) }
@@ -61,6 +64,7 @@ fun Login(navController: NavController) {
             .fillMaxWidth()
             .fillMaxSize()
             .padding(15.dp)
+//            .verticalScroll(rememberScrollState())
     ) {
         Column(
             verticalArrangement = Arrangement.spacedBy(24.dp, Alignment.Top),
@@ -186,7 +190,7 @@ fun Login(navController: NavController) {
                                 modifier = Modifier
                                     .width(24.dp)
                                     .height(24.dp),
-                                painter = painterResource(id = R.drawable.key),
+                                painter = painterResource(id = R.drawable.ic_key),
                                 contentDescription = "Icon"
                             )
                         }
@@ -207,6 +211,7 @@ fun Login(navController: NavController) {
                 Text(text = "Remember Me")
             }
         }
+
         // Bottom Login Button
         Column(
             Modifier
@@ -225,7 +230,7 @@ fun Login(navController: NavController) {
                             .padding(1.dp)
                             .width(20.dp)
                             .height(20.dp),
-                        painter = painterResource(id = R.drawable.right),
+                        painter = painterResource(id = R.drawable.ic_right),
                         tint = Color.White,
                         contentDescription = ""
                     )

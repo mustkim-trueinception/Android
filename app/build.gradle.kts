@@ -79,9 +79,8 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
-
-
-
+    implementation(libs.coil.compose)
+    implementation("io.coil-kt:coil-svg:2.7.0")
 
     implementation(libs.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
