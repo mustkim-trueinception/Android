@@ -77,7 +77,6 @@ fun DynamicImage(
                 onError = { error ->
                     Log.e("DynamicImage", "URL: ${imageSource.url} DynamicImage Error: $error")
                 },
-
                 )
         }
 
