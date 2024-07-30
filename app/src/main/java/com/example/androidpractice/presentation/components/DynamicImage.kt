@@ -18,14 +18,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.vectorResource
 import coil.compose.AsyncImage
 import coil.compose.rememberAsyncImagePainter
+import coil.decode.SvgDecoder
 import coil.request.ImageRequest
 import com.example.androidpractice.R
 
 sealed class DynamicImageSource {
     data class Url(
         val url: String?,
-        val placeholder: Int = R.drawable.ic_loading,
-        val fallback: Int = R.drawable.ic_loading,
+        val placeholder: Int = R.drawable.ic_profile,
+        val fallback: Int = R.drawable.ic_profile,
     ) : DynamicImageSource()
 
     data class Local(val localImage: Int, val asVector: Boolean = false) : DynamicImageSource()
@@ -60,10 +61,11 @@ fun DynamicImage(
     when (imageSource) {
         is DynamicImageSource.Url -> {
             // load image from url
+
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
                     .data(imageSource.url)
-
+                    .decoderFactory(SvgDecoder.Factory())
                     .build(),
                 contentDescription = description,
                 contentScale = customization.contentScale,
@@ -75,13 +77,8 @@ fun DynamicImage(
                 onError = { error ->
                     Log.e("DynamicImage", "URL: ${imageSource.url} DynamicImage Error: $error")
                 },
-//                    onLoading = { loading ->
-//                        Log.d("DynamicImage", "DynamicImage: $loading, URL: ${imageSource.url}")
-//                    },
-//                    onSuccess = { success ->
-//                        Log.d("DynamicImage", "DynamicImage: $success")
-//                    }
-            )
+
+                )
         }
 
         is DynamicImageSource.Local -> {

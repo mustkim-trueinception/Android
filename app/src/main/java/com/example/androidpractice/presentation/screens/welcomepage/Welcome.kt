@@ -71,7 +71,7 @@ fun Welcome(navController: NavController, welcomeViewModel: WelcomeViewModel = h
 
                 Image(
                     modifier = Modifier,
-                    painter = painterResource(id = R.drawable.all),
+                    painter = painterResource(id = R.drawable.image_welcome),
                     contentDescription = "",
                 )
 
@@ -94,7 +94,7 @@ fun Welcome(navController: NavController, welcomeViewModel: WelcomeViewModel = h
                                 modifier = Modifier
                                     .width(24.dp)
                                     .height(24.dp),
-                                painter = painterResource(id = R.drawable.google),
+                                painter = painterResource(id = R.drawable.ic_google),
                                 contentDescription = ""
                             )
                         }, colors = ButtonDefaults.buttonColors(Variables.Grey200), onClick = {},
@@ -114,7 +114,7 @@ fun Welcome(navController: NavController, welcomeViewModel: WelcomeViewModel = h
                                 modifier = Modifier
                                     .width(24.dp)
                                     .height(24.dp),
-                                painter = painterResource(id = R.drawable.github),
+                                painter = painterResource(id = R.drawable.ic_github),
                                 contentDescription = ""
                             )
                         }, colors = ButtonDefaults.buttonColors(Variables.Grey200),
@@ -151,7 +151,7 @@ fun Welcome(navController: NavController, welcomeViewModel: WelcomeViewModel = h
                                     .padding(1.dp)
                                     .width(20.dp)
                                     .height(20.dp),
-                                painter = painterResource(id = R.drawable.right),
+                                painter = painterResource(id = R.drawable.ic_right),
                                 tint = Color.White,
                                 contentDescription = ""
                             )

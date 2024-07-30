@@ -28,10 +28,10 @@ fun CostomBadge(
 ) {
     Row(
         Modifier
-        .width(39.dp)
-        .height(20.dp)
-        .background(color = Variables.primary500, shape = RoundedCornerShape(size = 999.dp))
-        .padding(start = 4.dp, end = 4.dp),
+            .width(39.dp)
+            .height(20.dp)
+            .background(color = Variables.primary500, shape = RoundedCornerShape(size = 999.dp))
+            .padding(start = 4.dp, end = 4.dp),
         horizontalArrangement = Arrangement.spacedBy(3.dp, Alignment.CenterHorizontally),
         verticalAlignment = Alignment.CenterVertically,
     ) {
@@ -48,11 +48,14 @@ fun CostomBadge(
             )
         )
 
-        Image(modifier = Modifier.size(12.dp).padding(bottom = 2.dp),
-        painter = painterResource(id = R.drawable.staricon),
-        contentDescription = "image description",
+        Image(
+            modifier = Modifier
+                .size(12.dp)
+                .padding(bottom = 2.dp),
+            painter = painterResource(id = R.drawable.ic_star),
+            contentDescription = "image description",
 
-    )
+            )
 
     }
 }
