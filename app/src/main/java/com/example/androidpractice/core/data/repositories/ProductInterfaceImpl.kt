@@ -8,27 +8,39 @@ class ProductInterfaceImpl : TopProductInterface {
     override fun getTopProducts(): List<TopProducts> {
         return listOf(
             TopProducts(
-                "1stprodict",
+                "Devlopment Board",
                 image = DynamicImageSource.Local(R.drawable.image_product3),
-                "product1",
+                "Raspberry PI 4 Model B With 4GB RAM",
                 "freedelivery",
-                "5.0",
-                "1500",
-                "2000",
-                "1000",
+                "4.0",
+                "1563 reviews",
+                "₹ 6,400.00",
+                "5,950",
                 "avalable"
             ),
 
             TopProducts(
-                "1stprodict",
-                image = DynamicImageSource.Local(R.drawable.image_product3),
-                "product1",
+                "Devlopment Board",
+                image = DynamicImageSource.Local(R.drawable.image_product4),
+                "Arduino Nano RP2040",
                 "freedelivery",
-                "5.0",
-                "1500",
+                "4.4",
+                "1563 reviews",
                 "2000",
                 "1000",
                 "avalable"
+            ),
+            TopProducts(
+                "Devlopment Board",
+                image = DynamicImageSource.Local(R.drawable.image_product1),
+                "D Printer Extruder 0.5mm nozzle",
+                "freedelivery",
+                "5.0",
+                "1563 reviews",
+                "₹ 6,400.00",
+                "5,950",
+                "Out of stock"
+
             )
         )
     }

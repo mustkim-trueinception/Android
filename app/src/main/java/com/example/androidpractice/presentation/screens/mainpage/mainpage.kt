@@ -39,7 +39,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.androidpractice.R
 import com.example.androidpractice.presentation.components.CostCard
 import com.example.androidpractice.presentation.components.CostomBadge
-import com.example.androidpractice.presentation.components.TopProducts
+import com.example.androidpractice.presentation.components.TopProduct
 import com.example.androidpractice.presentation.components.Variables
 import com.example.androidpractice.presentation.components.bottomnavbar.Navbar
 import com.example.androidpractice.presentation.components.carousel.Carousel
@@ -49,10 +49,12 @@ import com.example.androidpractice.presentation.components.carousel.Carousel
 @Composable
 fun Mainpage(mainViewModel: MainViewModel = hiltViewModel()) {
 
-    val collect = mainViewModel.topcat.collectAsState().value
+    val categoriesstate = mainViewModel.topcat.collectAsState().value
+    val productsstate = mainViewModel.topproducts.collectAsState().value
 
     LaunchedEffect(key1 = Unit) {
         mainViewModel.getTopCategories()
+        mainViewModel.getTopProducts()
     }
 
     Scaffold(
@@ -224,13 +226,13 @@ fun Mainpage(mainViewModel: MainViewModel = hiltViewModel()) {
                             }
                         }
                         LazyRow(
-                            modifier = Modifier.height(146.dp)
+
                         )
                         {
-                            when (collect) {
+                            when (categoriesstate) {
                                 is TopCategoriesUiState.Success -> {
 
-                                    items(collect.data) { item ->
+                                    items(categoriesstate.data) { item ->
                                         CostCard(img = item.image, text = item.description)
                                     }
                                 }
@@ -305,57 +307,44 @@ fun Mainpage(mainViewModel: MainViewModel = hiltViewModel()) {
                         LazyRow(
                             Modifier
                         ) {
-                            item {
-                                TopProducts(
-                                    productname = "Raspberry PI 4 Model B With 4GB RAM",
-                                    image = {
-                                        Image(
-                                            modifier = Modifier
-                                                .width(180.dp)
-                                                .height(160.dp),
-                                            painter = painterResource(id = R.drawable.image_product3),
-                                            contentDescription = "image description"
-                                        )
-                                    },
-                                    badge = { CostomBadge(rating = 4.0) },
-                                    mrp = "₹ 6,400.00",
-                                    price = "5,950"
-                                )
 
+                            when (productsstate) {
+                                is TopProductsUiState.Success -> {
+                                    items(productsstate.data) { item ->
 
-                                TopProducts(
-                                    productname = "Arduino Nano RP2040",
-                                    badge = { CostomBadge(rating = 5.0) },
-                                    image = {
-                                        Image(
-                                            modifier = Modifier
-                                                .width(180.dp)
-                                                .height(160.dp),
-                                            painter = painterResource(id = R.drawable.image_product4),
-                                            contentDescription = "image description"
+                                        TopProduct(
+                                            heading = item.heading,
+                                            img = item.image,
+                                            productname = item.productname,
+                                            deliverycharges = item.delivery,
+                                            badge = { CostomBadge(rating = item.rating) },
+                                            reviews = item.review,
+                                            mrp = item.mrp,
+                                            price = item.price,
+                                            stock = item.stock
                                         )
-                                    })
+                                    }
+                                }
 
-                                TopProducts(
-                                    productname = "3D Printer Extruder 0.5mm nozzle",
-                                    image = {
-                                        Image(
-                                            modifier = Modifier
-                                                .width(180.dp)
-                                                .height(160.dp),
-                                            painter = painterResource(id = R.drawable.image_product1),
-                                            contentDescription = "image description"
-                                        )
-                                    },
-                                    badge = { CostomBadge(rating = 4.8) },
-                                    price = "5,440.00"
-                                )
+                                is TopProductsUiState.Error -> item {
+                                    Text(text = "error")
+                                }
+
+                                TopProductsUiState.Idle -> item {
+                                    Text(text = "idle")
+                                }
+
+                                is TopProductsUiState.Loading -> item {
+                                    Text(text = "loading")
+                                }
                             }
+
                         }
+                    }
                     }
                 }
 
             }
         }
     }
-}
+

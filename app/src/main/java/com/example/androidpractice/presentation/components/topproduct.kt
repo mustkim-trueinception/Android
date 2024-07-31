@@ -27,22 +27,22 @@ import com.example.androidpractice.R
 @Composable
 fun TopProduct(
     modifier: Modifier = Modifier,
-    heading: String = "Development Boards",
+    heading: String? = null,
     img: DynamicImageSource = DynamicImageSource.Local(R.drawable.image_product3),
-    image: @Composable (() -> Unit)? = null,
-    productname: String = "Arduino Nano RP2040",
-    deliverycharges: String = "free delivery",
-    price: String  ? =null,
+    productname: String? = null,
+    deliverycharges: String? = null,
+    stock: String? = null,
+    price: String? = null,
     mrp: String ? = null,
     badge: @Composable (() -> Unit)? = null,
     reviews:String = "1563 reviews",
 ) {
-    Column(modifier =
-    modifier
-        .clip(shape = RoundedCornerShape(8.dp))
-        .width(224.dp)
-        .padding(start = 12.dp, end = 12.dp, bottom = 8.dp)
-        .clickable { },
+    Column(
+        modifier =
+        modifier
+            .padding(start = 12.dp, end = 12.dp, bottom = 8.dp)
+            .clip(shape = RoundedCornerShape(8.dp))
+            .clickable { },
         verticalArrangement = Arrangement.spacedBy(
             12.dp,
             Alignment.Top
@@ -50,7 +50,7 @@ fun TopProduct(
         horizontalAlignment = Alignment.Start,
     ) {
         Text(
-            text = heading,
+            text = heading ?: "",
             style = TextStyle(
                 fontSize = 14.sp,
                 lineHeight = 20.sp,
@@ -59,9 +59,7 @@ fun TopProduct(
                 color = Variables.textInactive,
             )
         )
-        if (image != null) {
-            image()
-        }
+
         DynamicImage(
             imageSource = img,
             customization = ImageCustomization(
@@ -73,7 +71,8 @@ fun TopProduct(
         )
 
         Text(
-            text = productname,
+            modifier = Modifier.width(190.dp),
+            text = productname ?: "",
             style = TextStyle(
                 fontSize = 16.sp,
                 lineHeight = 20.sp,
@@ -82,7 +81,7 @@ fun TopProduct(
             )
         )
         Text(
-            text = deliverycharges,
+            text = deliverycharges ?: "",
 
             // P2/Special/Italic
             style = TextStyle(
@@ -115,7 +114,7 @@ fun TopProduct(
                 )
             )
         }
-        if (price != null) {
+        if (price != null || mrp != null) {
             Row(
                 horizontalArrangement = Arrangement.spacedBy(
                     Variables.xSm,
@@ -134,7 +133,7 @@ fun TopProduct(
                     )
                 )
                 Text(
-                    text = "₹ $price",
+                    text = price ?: "",
                     style = TextStyle(
                         fontSize = 14.sp,
                         lineHeight = 20.sp,
@@ -142,8 +141,10 @@ fun TopProduct(
                         color = Variables.Green500,
                     )
                 )
-            }}
-        else{
+            }
+        }
+
+        if (stock != null) {
             Row(
                 Modifier
                     .width(82.dp)
@@ -160,7 +161,7 @@ fun TopProduct(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text(
-                    text = "out of stock",
+                    text = stock,
                     style = TextStyle(
                         fontSize = 10.sp,
                         lineHeight = 16.sp,
@@ -170,6 +171,6 @@ fun TopProduct(
                     )
                 )
             }
-    }
+        }
     }
 }
