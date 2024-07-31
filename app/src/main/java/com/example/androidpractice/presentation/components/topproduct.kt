@@ -114,7 +114,9 @@ fun TopProduct(
                 )
             )
         }
-        if (price != null || mrp != null) {
+        if (mrp != null || price != null) {
+
+
             Row(
                 horizontalArrangement = Arrangement.spacedBy(
                     Variables.xSm,
@@ -122,6 +124,8 @@ fun TopProduct(
                 ),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
+
+
                 Text(
                     text = mrp ?: "",
                     style = TextStyle(
@@ -132,6 +136,7 @@ fun TopProduct(
                         textDecoration = TextDecoration.LineThrough,
                     )
                 )
+
                 Text(
                     text = price ?: "",
                     style = TextStyle(

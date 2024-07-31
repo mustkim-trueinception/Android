@@ -9,7 +9,7 @@ data class TopProducts(
     val delivery: String = "",
     val rating: String = "",
     val review: String = "",
-    val mrp: String = "",
-    val price: String = "",
+    val mrp: String? = null,
+    val price: String? = null,
     val stock: String? = null
 )

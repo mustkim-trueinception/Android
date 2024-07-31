@@ -8,38 +8,35 @@ class ProductInterfaceImpl : TopProductInterface {
     override fun getTopProducts(): List<TopProducts> {
         return listOf(
             TopProducts(
-                "Devlopment Board",
+                heading = "Devlopment Board",
                 image = DynamicImageSource.Local(R.drawable.image_product3),
-                "Raspberry PI 4 Model B With 4GB RAM",
-                "freedelivery",
-                "4.0",
-                "1563 reviews",
-                "₹ 6,400.00",
-                "5,950",
-                "avalable"
+                productname = "Raspberry PI 4 Model B With 4GB RAM",
+                delivery = "freedelivery",
+                rating = "4.0",
+                review = "1563 reviews",
+                mrp = "₹ 6,400.00",
+                price = "5,950",
+                stock = "avalable"
             ),
 
             TopProducts(
-                "Devlopment Board",
+                heading = "Devlopment Board",
                 image = DynamicImageSource.Local(R.drawable.image_product4),
-                "Arduino Nano RP2040",
-                "freedelivery",
-                "4.4",
-                "1563 reviews",
-                "2000",
-                "1000",
-                "avalable"
+                productname = "Arduino Nano RP2040",
+                delivery = "freedelivery",
+                rating = "4.4",
+                review = "1563 reviews",
+                price = "1000",
+                stock = "avalable"
             ),
             TopProducts(
-                "Devlopment Board",
+                heading = "Devlopment Board",
                 image = DynamicImageSource.Local(R.drawable.image_product1),
-                "D Printer Extruder 0.5mm nozzle",
-                "freedelivery",
-                "5.0",
-                "1563 reviews",
-                "₹ 6,400.00",
-                "5,950",
-                "Out of stock"
+                productname = "D Printer Extruder 0.5mm nozzle",
+                delivery = "freedelivery",
+                rating = "5.0",
+                review = "1563 reviews",
+                stock = "out of stock"
 
             )
         )
