@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.androidpractice.presentation.screens.mainpage.Mainpage
 import com.example.androidpractice.presentation.screens.login.Login
+import com.example.androidpractice.presentation.screens.mainpage.Mainpage
 import com.example.androidpractice.presentation.screens.signinpage.Signup
 import com.example.androidpractice.presentation.screens.welcomepage.Welcome
 import kotlinx.serialization.Serializable
@@ -32,7 +32,7 @@ sealed class Route{
 fun Navigation(){
 
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = Route.Welcome) {
+    NavHost(navController = navController, startDestination = Route.Home) {
         composable<Route.Welcome> { Welcome(navController) }
         composable<Route.Login> { Login(navController) }
         composable<Route.Signup> { Signup(navController) }

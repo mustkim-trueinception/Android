@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -23,6 +24,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -37,7 +39,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.androidpractice.R
 import com.example.androidpractice.presentation.components.CostCard
 import com.example.androidpractice.presentation.components.CostomBadge
-import com.example.androidpractice.presentation.components.TopCategories
+import com.example.androidpractice.presentation.components.TopProduct
 import com.example.androidpractice.presentation.components.Variables
 import com.example.androidpractice.presentation.components.bottomnavbar.Navbar
 import com.example.androidpractice.presentation.components.carousel.Carousel
@@ -47,7 +49,13 @@ import com.example.androidpractice.presentation.components.carousel.Carousel
 @Composable
 fun Mainpage(mainViewModel: MainViewModel = hiltViewModel()) {
 
-    val collect = mainViewModel.topcat.collectAsState().value
+    val categoriesstate = mainViewModel.topcategorystate.collectAsState().value
+    val productsstate = mainViewModel.topproductstate.collectAsState().value
+
+    LaunchedEffect(key1 = Unit) {
+        mainViewModel.getTopCategories()
+        mainViewModel.getTopProducts()
+    }
 
     Scaffold(
         bottomBar = {
@@ -218,12 +226,45 @@ fun Mainpage(mainViewModel: MainViewModel = hiltViewModel()) {
                             }
                         }
                         LazyRow(
-                            modifier = Modifier.height(146.dp)
+
                         )
                         {
-                            items(collect) { Cat ->
+                            when (categoriesstate) {
+                                is TopCategoriesUiState.Success -> {
 
-                                CostCard(img = Cat.image, text = Cat.description)
+                                    items(categoriesstate.data) { item ->
+                                        CostCard(img = item.image, text = item.description)
+                                    }
+                                }
+
+                                is TopCategoriesUiState.Idle -> {
+                                    item {
+                                        Box {
+                                            Text(text = "idle")
+                                        }
+                                    }
+                                }
+
+                                is TopCategoriesUiState.Loading -> {
+
+                                    item {
+                                        Box {
+                                            Text(text = "loading")
+                                        }
+                                    }
+
+                                }
+
+                                is TopCategoriesUiState.Error -> {
+
+                                    item {
+                                        Box {
+                                            Text(text = "error")
+                                        }
+                                    }
+
+                                }
+
                             }
 
                         }
@@ -266,57 +307,44 @@ fun Mainpage(mainViewModel: MainViewModel = hiltViewModel()) {
                         LazyRow(
                             Modifier
                         ) {
-                            item {
-                                TopCategories(
-                                    productname = "Raspberry PI 4 Model B With 4GB RAM",
-                                    image = {
-                                        Image(
-                                            modifier = Modifier
-                                                .width(180.dp)
-                                                .height(160.dp),
-                                            painter = painterResource(id = R.drawable.image_product3),
-                                            contentDescription = "image description"
-                                        )
-                                    },
-                                    badge = { CostomBadge(rating = 4.0) },
-                                    mrp = "₹ 6,400.00",
-                                    price = "5,950"
-                                )
 
+                            when (productsstate) {
+                                is TopProductsUiState.Success -> {
+                                    items(productsstate.data) { item ->
 
-                                TopCategories(
-                                    productname = "Arduino Nano RP2040",
-                                    badge = { CostomBadge(rating = 5.0) },
-                                    image = {
-                                        Image(
-                                            modifier = Modifier
-                                                .width(180.dp)
-                                                .height(160.dp),
-                                            painter = painterResource(id = R.drawable.image_product4),
-                                            contentDescription = "image description"
+                                        TopProduct(
+                                            heading = item.heading,
+                                            img = item.image,
+                                            productname = item.productname,
+                                            deliverycharges = item.delivery,
+                                            badge = { CostomBadge(rating = item.rating) },
+                                            reviews = item.review,
+                                            mrp = item.mrp,
+                                            price = item.price,
+                                            stock = item.stock
                                         )
-                                    })
+                                    }
+                                }
 
-                                TopCategories(
-                                    productname = "3D Printer Extruder 0.5mm nozzle",
-                                    image = {
-                                        Image(
-                                            modifier = Modifier
-                                                .width(180.dp)
-                                                .height(160.dp),
-                                            painter = painterResource(id = R.drawable.image_product1),
-                                            contentDescription = "image description"
-                                        )
-                                    },
-                                    badge = { CostomBadge(rating = 4.8) },
-                                    price = "5,440.00"
-                                )
+                                is TopProductsUiState.Error -> item {
+                                    Text(text = "error")
+                                }
+
+                                TopProductsUiState.Idle -> item {
+                                    Text(text = "idle")
+                                }
+
+                                is TopProductsUiState.Loading -> item {
+                                    Text(text = "loading")
+                                }
                             }
+
                         }
+                    }
                     }
                 }
 
             }
         }
     }
-}
+

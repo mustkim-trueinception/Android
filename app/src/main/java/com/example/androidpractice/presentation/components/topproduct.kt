@@ -14,32 +14,35 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.androidpractice.R
 
 
 @Composable
-fun TopCategories(
+fun TopProduct(
     modifier: Modifier = Modifier,
-    heading: String = "Development Boards",
-    image: @Composable (() -> Unit)? = null,
-    productname: String = "Arduino Nano RP2040",
-    deliverycharges: String = "free delivery",
-    price: String  ? =null,
+    heading: String? = null,
+    img: DynamicImageSource = DynamicImageSource.Local(R.drawable.image_product3),
+    productname: String? = null,
+    deliverycharges: String? = null,
+    stock: String? = null,
+    price: String? = null,
     mrp: String ? = null,
     badge: @Composable (() -> Unit)? = null,
     reviews:String = "1563 reviews",
 ) {
-    Column(modifier =
-    modifier
-        .clip(shape = RoundedCornerShape(8.dp))
-        .width(224.dp)
-        .padding(start = 12.dp, end = 12.dp, bottom = 8.dp)
-        .clickable { },
+    Column(
+        modifier =
+        modifier
+            .padding(start = 12.dp, end = 12.dp, bottom = 8.dp)
+            .clip(shape = RoundedCornerShape(8.dp))
+            .clickable { },
         verticalArrangement = Arrangement.spacedBy(
             12.dp,
             Alignment.Top
@@ -47,7 +50,7 @@ fun TopCategories(
         horizontalAlignment = Alignment.Start,
     ) {
         Text(
-            text = heading,
+            text = heading ?: "",
             style = TextStyle(
                 fontSize = 14.sp,
                 lineHeight = 20.sp,
@@ -56,11 +59,20 @@ fun TopCategories(
                 color = Variables.textInactive,
             )
         )
-        if (image != null) {
-            image()
-        }
+
+        DynamicImage(
+            imageSource = img,
+            customization = ImageCustomization(
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .width(180.dp)
+                    .height(160.dp),
+            ),
+        )
+
         Text(
-            text = productname,
+            modifier = Modifier.width(190.dp),
+            text = productname ?: "",
             style = TextStyle(
                 fontSize = 16.sp,
                 lineHeight = 20.sp,
@@ -69,7 +81,7 @@ fun TopCategories(
             )
         )
         Text(
-            text = deliverycharges,
+            text = deliverycharges ?: "",
 
             // P2/Special/Italic
             style = TextStyle(
@@ -93,7 +105,6 @@ fun TopCategories(
             Text(
                 text = reviews,
 
-                // P2/Special/Italic
                 style = TextStyle(
                     fontSize = 12.sp,
                     lineHeight = 16.sp,
@@ -103,7 +114,9 @@ fun TopCategories(
                 )
             )
         }
-        if (price != null) {
+        if (mrp != null || price != null) {
+
+
             Row(
                 horizontalArrangement = Arrangement.spacedBy(
                     Variables.xSm,
@@ -111,6 +124,8 @@ fun TopCategories(
                 ),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
+
+
                 Text(
                     text = mrp ?: "",
                     style = TextStyle(
@@ -121,8 +136,9 @@ fun TopCategories(
                         textDecoration = TextDecoration.LineThrough,
                     )
                 )
+
                 Text(
-                    text = "₹ $price",
+                    text = price ?: "",
                     style = TextStyle(
                         fontSize = 14.sp,
                         lineHeight = 20.sp,
@@ -130,8 +146,10 @@ fun TopCategories(
                         color = Variables.Green500,
                     )
                 )
-            }}
-        else{
+            }
+        }
+
+        if (stock != null) {
             Row(
                 Modifier
                     .width(82.dp)
@@ -148,7 +166,7 @@ fun TopCategories(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
                 Text(
-                    text = "out of stock",
+                    text = stock,
                     style = TextStyle(
                         fontSize = 10.sp,
                         lineHeight = 16.sp,
@@ -158,6 +176,6 @@ fun TopCategories(
                     )
                 )
             }
-    }
+        }
     }
 }

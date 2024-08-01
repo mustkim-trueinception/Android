@@ -24,7 +24,7 @@ import com.example.androidpractice.R
 
 @Composable
 fun CostomBadge(
-    rating: Double = 4.8
+    rating: String = "4.8"
 ) {
     Row(
         Modifier
@@ -37,7 +37,7 @@ fun CostomBadge(
     ) {
         Text(modifier = Modifier
             ,
-            text = rating.toString(),
+            text = rating,
             style = TextStyle(
                 fontSize = 9.sp,
                 lineHeight = 16.sp,
