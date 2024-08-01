@@ -32,34 +32,35 @@ sealed class TopProductsUiState {
 class MainViewModel @Inject constructor(
     private val imageslist: Imageslist,
     private val category: Category,
-    private val TopProducts: TopProductInterface
+    private val topProducts: TopProductInterface
 ) : ViewModel() {
     fun getimage(): List<Int> {
         return imageslist.getimages()
     }
 
-    private val _topcat = MutableStateFlow<TopCategoriesUiState>(TopCategoriesUiState.Idle)
-    val topcat = _topcat.asStateFlow()
+    private val _topcategorystate =
+        MutableStateFlow<TopCategoriesUiState>(TopCategoriesUiState.Idle)
+    val topcategorystate = _topcategorystate.asStateFlow()
 
     suspend fun getTopCategories() {
         try {
             val getCategory = category.getcategory()
-            _topcat.value = TopCategoriesUiState.Success(getCategory)
+            _topcategorystate.value = TopCategoriesUiState.Success(getCategory)
         } catch (error: Error) {
-            _topcat.value = TopCategoriesUiState.Error("Error")
+            _topcategorystate.value = TopCategoriesUiState.Error("Error")
         }
 
     }
 
-    private val _topproducts = MutableStateFlow<TopProductsUiState>(TopProductsUiState.Idle)
-    val topproducts = _topproducts.asStateFlow()
+    private val _topproductstate = MutableStateFlow<TopProductsUiState>(TopProductsUiState.Idle)
+    val topproductstate = _topproductstate.asStateFlow()
 
     suspend fun getTopProducts() {
         try {
-            val getproducts = TopProducts.getTopProducts()
-            _topproducts.value = TopProductsUiState.Success(getproducts)
+            val getproducts = topProducts.getTopProducts()
+            _topproductstate.value = TopProductsUiState.Success(getproducts)
         } catch (error: Error) {
-            _topproducts.value = TopProductsUiState.Error("Error")
+            _topproductstate.value = TopProductsUiState.Error("Error")
         }
     }
 }

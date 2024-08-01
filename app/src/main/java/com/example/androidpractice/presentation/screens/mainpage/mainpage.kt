@@ -49,8 +49,8 @@ import com.example.androidpractice.presentation.components.carousel.Carousel
 @Composable
 fun Mainpage(mainViewModel: MainViewModel = hiltViewModel()) {
 
-    val categoriesstate = mainViewModel.topcat.collectAsState().value
-    val productsstate = mainViewModel.topproducts.collectAsState().value
+    val categoriesstate = mainViewModel.topcategorystate.collectAsState().value
+    val productsstate = mainViewModel.topproductstate.collectAsState().value
 
     LaunchedEffect(key1 = Unit) {
         mainViewModel.getTopCategories()
